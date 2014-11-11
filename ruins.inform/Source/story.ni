@@ -29,9 +29,16 @@ Before taking the theodolite:
 	say "Janice looks up from her notes and asks you not to remove the theodolite as she still needs it." instead.
 
 [ Scenes are defined here ]
-Exploring dig site is a scene. Exploring dig site begins when the player is in the Dig site for the first time.
+Exploring dig site is a scene. Exploring dig site begins when the player is in the Dig Site for the first time.
+
+Exploring temple is a scene. Exploring temple begins when the player is in the Underground room for the first time.
+
+When exploring temple begins:
+	now the destination of Janice is The Underground Monolith.
 
 [ Characters are defined here ]
+
+A person has a room called destination.
 
 Bauer is a man in Dig site. The description is "Bauer is peering around through his round spectacles."
 
@@ -39,7 +46,11 @@ Every turn when the player is in the Dig site and Bauer is in the Dig site:
 	if a random chance of 1 in 3 succeeds:
 		say "Bauer [one of]slowly shifts through sand, while searching for artifacts[or]writes down notes into his notebook[or]closely examines pottery fragments[at random]."
 
-Janice is a woman in the Monolith. The description is "Janice is keenly observing her surroundings."
+Janice is a woman in the Monolith. The destination of Janice is the Monolith. The description is "Janice is keenly observing her surroundings."
+
+Every turn when the destination of Janice is not the location of Janice:
+	let the right direction be the best route from the location of Janice to the destination of Janice;
+	try Janice going the right direction.
 
 Every turn when the player is in the Monolith and Janice is in the Monolith:
 	if a random chance of 1 in 3 succeeds:
