@@ -1,6 +1,6 @@
 "ruins" by "Tuukka Turto"
 
-When play begins, say "Not too long ago, ancient ruins were discovered in the Amazonas Jungle. You have traveled there as a part of group of archeologists, who plan to excavate the ruins and discover what secrets they hold."
+When play begins, say "Not too long ago, ancient ruins were discovered in the Amazon Jungle. You have traveled there as a part of group of archaeologists, who plan to excavate the ruins and discover what secrets they hold."
 
 [ Rooms are defined below ]
 
@@ -17,6 +17,21 @@ The monolith is southwest of the Dig site. The description is "Ancient monolith 
 Underground room is down of the Old Temple. The description is "Light shines to room from the opening in the roof. Stairs made of heavy stone lead back up to the temple."
 
 [ Items are defined below ]
+theodolite is in the Monolith. The description is "complex looking theodolite is standing on a tripod."  
+
+Before taking the theodolite:
+	say "Janice looks up from her notes and asks you not to remove the theodolite as she still needs it." instead.
 
 [ Characters are defined here ]
 
+Bauer is a man in Dig site. The description is "Bauer is peering around through his round spectacles."
+
+Every turn when the player is in the Dig site and Bauer is in the Dig site:
+	if a random chance of 1 in 3 succeeds:
+		say "Bauer [one of]slowly shifts through sand, while searching for artifacts[or]writes down notes into his notebook[or]closely examines pottery fragments[at random]."
+
+Janice is a woman in the Monolith. The description is "Janice is keenly observing her surroundings."
+
+Every turn when the player is in the Monolith and Janice is in the Monolith:
+	if a random chance of 1 in 3 succeeds:
+		say "Janice [one of]is examining markings on the monolith[or]peers through theodolite[or]is making complex looking calculations in her notebook[or]stares into distance while pondering something[at random]."
