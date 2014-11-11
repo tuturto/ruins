@@ -26,7 +26,8 @@ Monolith Base is down of the Underground Monolith. The description is "Base of t
 theodolite is in the Monolith. The description is "complex looking theodolite is standing on a tripod."  
 
 Before taking the theodolite:
-	say "Janice looks up from her notes and asks you not to remove the theodolite as she still needs it." instead.
+	if Janice is in the Monolith:
+		say "Janice looks up from her notes and asks you not to remove the theodolite as she still needs it." instead.
 
 [ Scenes are defined here ]
 Exploring dig site is a scene. Exploring dig site begins when the player is in the Dig Site for the first time.
@@ -34,13 +35,18 @@ Exploring dig site is a scene. Exploring dig site begins when the player is in t
 Exploring temple is a scene. Exploring temple begins when the player is in the Underground room for the first time.
 
 When exploring temple begins:
-	now the destination of Janice is The Underground Monolith.
+	now the destination of Janice is the Underground Monolith;
+	now the destination of Bauer is the Underground Machinery.
 
 [ Characters are defined here ]
 
 A person has a room called destination.
 
-Bauer is a man in Dig site. The description is "Bauer is peering around through his round spectacles."
+Bauer is a man in Dig Site. The destination of Bauer is the Dig Site. The description is "Bauer is peering around through his round spectacles."
+
+Every turn when the destination of Bauer is not the location of Bauer:
+	let the right direction be the best route from the location of Bauer to the destination of Bauer;
+		try Bauer going the right direction.
 
 Every turn when the player is in the Dig site and Bauer is in the Dig site:
 	if a random chance of 1 in 3 succeeds:
@@ -55,3 +61,8 @@ Every turn when the destination of Janice is not the location of Janice:
 Every turn when the player is in the Monolith and Janice is in the Monolith:
 	if a random chance of 1 in 3 succeeds:
 		say "Janice [one of]is examining markings on the monolith[or]peers through theodolite[or]is making complex looking calculations in her notebook[or]stares into distance while pondering something[at random]."
+
+Every turn when the player is in the Underground Monolith and Janice is in the Underground Monolith:
+	if a random chance of 1 in 3 succeeds:
+		say "Janice [one of]is examining markings on the monolith[or]writes furiously in her notebook[or]walks around the room, lost in her thought[at random]."
+		
