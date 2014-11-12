@@ -43,7 +43,7 @@ Before examining the theodolite:
 	say "You peer through the theodolite and see an image of a jaguar carved to stone." instead.
 
 [ Scenes are defined here ]
-Exploring dig site is a scene. Exploring dig site begins when the player is in the Dig Site for the first time.
+Exploring dig site is a scene. Exploring dig site begins when the player is in the Dig Site for the first time. Exploring dig site ends when Exploring temple begins.
 
 Exploring temple is a scene. Exploring temple begins when the player is in the Underground room for the first time.
 
@@ -85,16 +85,16 @@ Every turn when the player is in the Monolith and Janice is in the Monolith:
 	if a random chance of 1 in 3 succeeds:
 		say "Janice [one of]is examining markings on the monolith[or]peers through theodolite[or]is making complex looking calculations in her notebook[or]stares into distance while pondering something[at random]."
 
-Instead of quizzing Janice about the theodolite:
+Instead of quizzing Janice about the theodolite during exploring dig site:
 	say "'I set it to point the direction I calculated from these markings on the monolith. I believe it's currently pointing towards that temple.'"
 
-Instead of quizzing Janice about the monolith_scenery:
+Instead of quizzing Janice about the monolith_scenery during exploring dig site:
 	say "'This monolith is fascinating. We haven't been able to decipher all of it, but it seems to have some very complex mathematical equations on it.'"
 
-Instead of quizzing Janice about the jaguar carving:
+Instead of quizzing Janice about the jaguar carving during exploring dig site:
 	say "'I'm not sure about the meaning of the jaguar carving. Might be that I have made mistake with my calculations.'"
 
-Instead of quizzing Janice about the temple_scenery:
+Instead of quizzing Janice about the temple_scenery during exploring dig site:
 	say "'The theodolite is currently pointing towards that old temple. I haven't really had time to go and have a proper look at it.'"
 
 Every turn when the player is in the Underground Monolith and Janice is in the Underground Monolith:
