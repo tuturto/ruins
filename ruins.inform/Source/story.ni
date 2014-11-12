@@ -63,7 +63,7 @@ Check quizzing it about:
 	say "[The noun] shrugs unhelpfully."
 
 Check informing it about:
-	say "[The noun] listens only barely."
+	say "[The noun] only barely listens your explanation."
 
 Bauer is a man in Dig Site. The destination of Bauer is the Dig Site. The description is "Bauer is peering around through his round spectacles."
 
@@ -100,4 +100,6 @@ Instead of quizzing Janice about the temple_scenery during exploring dig site:
 Every turn when the player is in the Underground Monolith and Janice is in the Underground Monolith:
 	if a random chance of 1 in 3 succeeds:
 		say "Janice [one of]is examining markings on the monolith[or]writes furiously in her notebook[or]walks around the room, lost in her thought[at random]."
-		
+
+Instead of quizzing Janice about the monolith_scenery during exploring temple:
+	say "'It seems that the monolith is much larger than we thought as it continues further down in earth. Who would have thought that?'"
