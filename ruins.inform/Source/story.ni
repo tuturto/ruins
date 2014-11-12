@@ -12,7 +12,17 @@ Dig Site is south of the Camp site. The description is "Main dig site has severa
 
 Old Temple is east of Camp site. Old Temple is northeast of the Dig site. The description is "Large stones stand at the ruins of the old temple. The roof has caved in and walls are only partially standing. The camp site is located to west, while the main dig site can been seen at south west direction."
 
+the jaguar carving is scenery in the Old Temple. The description is "Ancient jaguar has been carved into one of the stone pillars."
+
+the temple_scenery is scenery in the Old Temple. The description is "Large stones that form the circle of temple are long fallen and chipped."
+
+understand "temple" as temple_scenery.
+
 The Monolith is southwest of the Dig site. The description is "Ancient monolith stands on a stony clearing. Curious markings cover surface of it. At north east one can see the main dig site."
+
+the monolith_scenery is scenery in the Monolith. The description is "Ancient monolith stands alone. Curious markings cover surface of it."
+
+understand "monolith" as monolith_scenery.
 
 Underground Room is down of the Old Temple. The description is "Light shines to room from the opening in the roof. Stairs made of heavy stone lead back up to the temple."
 
@@ -29,6 +39,9 @@ Before taking the theodolite:
 	if Janice is in the Monolith:
 		say "Janice looks up from her notes and asks you not to remove the theodolite as she still needs it." instead.
 
+Before examining the theodolite:
+	say "You peer through the theodolite and see an image of a jaguar carved to stone." instead.
+
 [ Scenes are defined here ]
 Exploring dig site is a scene. Exploring dig site begins when the player is in the Dig Site for the first time.
 
@@ -41,6 +54,16 @@ When exploring temple begins:
 [ Characters are defined here ]
 
 A person has a room called destination.
+
+Quizzing it about is an action applying to one thing and one visible thing. Understand "ask [someone] about [any thing]" and "quiz [someone] about [any thing]" as quizzing it about.
+
+Informing it about is an action applying to one thing and one visible thing. Understand "tell [someone] about [any thing]" and "inform [someone] about [any thing]" as informing it about.
+
+Check quizzing it about:
+	say "[The noun] shrugs unhelpfully."
+
+Check informing it about:
+	say "[The noun] listens only barely."
 
 Bauer is a man in Dig Site. The destination of Bauer is the Dig Site. The description is "Bauer is peering around through his round spectacles."
 
@@ -61,6 +84,18 @@ Every turn when the destination of Janice is not the location of Janice:
 Every turn when the player is in the Monolith and Janice is in the Monolith:
 	if a random chance of 1 in 3 succeeds:
 		say "Janice [one of]is examining markings on the monolith[or]peers through theodolite[or]is making complex looking calculations in her notebook[or]stares into distance while pondering something[at random]."
+
+Instead of quizzing Janice about the theodolite:
+	say "'I set it to point the direction I calculated from these markings on the monolith. I believe it's currently pointing towards that temple.'"
+
+Instead of quizzing Janice about the monolith_scenery:
+	say "'This monolith is fascinating. We haven't been able to decipher all of it, but it seems to have some very complex mathematical equations on it.'"
+
+Instead of quizzing Janice about the jaguar carving:
+	say "'I'm not sure about the meaning of the jaguar carving. Might be that I have made mistake with my calculations.'"
+
+Instead of quizzing Janice about the temple_scenery:
+	say "'The theodolite is currently pointing towards that old temple. I haven't really had time to go and have a proper look at it.'"
 
 Every turn when the player is in the Underground Monolith and Janice is in the Underground Monolith:
 	if a random chance of 1 in 3 succeeds:
