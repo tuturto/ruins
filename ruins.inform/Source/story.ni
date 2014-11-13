@@ -1,6 +1,16 @@
-"ruins" by "Tuukka Turto"
+"Secret of the Ruins" by "Tuukka Turto"
 
 When play begins, say "Not too long ago, ancient ruins were discovered in the Amazon Jungle. You have traveled there as a part of group of archaeologists, who plan to excavate the ruins and discover what secrets they hold."
+
+[ Regions are defined below ]
+
+Dig Area is a region. Camp Site, Dig Site, The Monolith and Old Temple are in Dig Area. 
+
+[ Backdrops are defined below ]
+
+The sky is a backdrop. The description is "the sky is completely cloudless." The sky is in the Dig Area.
+
+The ground is a backdrop. The description is "Ground is dry and dusty." The ground is in the Dig Area.
 
 [ Rooms are defined below ]
 
@@ -10,9 +20,13 @@ Camp Site is south of the Tent. The description is "Camp site has several tents 
 
 Dig Site is south of the Camp site. The description is "Main dig site has several excavations, all neatly marked, labeled and cataloged. The main camp site is located at north from here. A well traveled path leads from south west to north east."
 
-Old Temple is east of Camp site. Old Temple is northeast of the Dig site. The description is "Large stones stand at the ruins of the old temple. The roof has caved in and walls are only partially standing. The camp site is located to west, while the main dig site can been seen at south west direction."
+Old Temple is east of Camp site. Old Temple is northeast of the Dig site. The description is "Large stones stand at the ruins of the old temple. The roof has caved in and walls are only partially standing. The walls are covered with carvings of animals. The camp site is located to west, while the main dig site can been seen at south west direction."
 
-the jaguar carving is scenery in the Old Temple. The description is "Ancient jaguar has been carved into one of the stone pillars."
+Animal Carvings are scenery in the Old Temple. The description is "Carvings of various jungle animals cover what's left of the walls here."
+
+the stones are scenery in the Old Temple. The description is "The temple walls are built from old stones. They have been fitted together with exceptional precision that even modern times would have hard time to replicate."
+
+the jaguar carving is scenery in the Old Temple. The description is "Ancient jaguar has been carved into one of the stone pillars. It seems to be slightly raised compared to other animal carvings."
 
 the temple_scenery is scenery in the Old Temple. The description is "Large stones that form the circle of temple are long fallen and chipped."
 
@@ -20,7 +34,8 @@ understand "temple" as temple_scenery.
 
 Instead of pushing the jaguar:
 	say "As you push the jaguar carving, it slowly depresses slightly. A screeching sound behind of you catches your attention and as you turn, there's an opening leading under the ground.";
-	change the down exit of the Old Temple to the Underground room.
+	change the down exit of the Old Temple to the Underground Room;
+	change the up exit of the Underground Room to the Old Temple.
 
 The Monolith is southwest of the Dig site. The description is "Ancient monolith stands on a stony clearing. Curious markings cover surface of it. At north east one can see the main dig site."
 
