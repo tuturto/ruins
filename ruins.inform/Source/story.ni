@@ -6,6 +6,8 @@ When play begins, say "Not too long ago, ancient ruins were discovered in the Am
 
 Dig Area is a region. Camp Site, Dig Site, The Monolith and Old Temple are in Dig Area. 
 
+Underground Temple Area is a region. The Underground Machinery, the Underground Room and the Underground Monolith are in Underground Temple Area.
+
 [ Backdrops are defined below ]
 
 The sky is a backdrop. The description is "the sky is completely cloudless." The sky is in the Dig Area.
