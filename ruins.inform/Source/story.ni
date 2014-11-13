@@ -18,13 +18,17 @@ the temple_scenery is scenery in the Old Temple. The description is "Large stone
 
 understand "temple" as temple_scenery.
 
+Instead of pushing the jaguar:
+	say "As you push the jaguar carving, it slowly depresses slightly. A screeching sound behind of you catches your attention and as you turn, there's an opening leading under the ground.";
+	change the down exit of the Old Temple to the Underground room.
+
 The Monolith is southwest of the Dig site. The description is "Ancient monolith stands on a stony clearing. Curious markings cover surface of it. At north east one can see the main dig site."
 
 the monolith_scenery is scenery in the Monolith. The description is "Ancient monolith stands alone. Curious markings cover surface of it."
 
 understand "monolith" as monolith_scenery.
 
-Underground Room is down of the Old Temple. The description is "Light shines to room from the opening in the roof. Stairs made of heavy stone lead back up to the temple."
+Underground Room is a room. The description is "Light shines to room from the opening in the roof. Stairs made of heavy stone lead back up to the temple."
 
 The Underground Monolith is southwest of the Underground Room. The description is "Large stone block pierces this room from ceiling to floor. It is covered with the same markings as the monolith above the ground."
 
@@ -45,7 +49,7 @@ Before examining the theodolite:
 [ Scenes are defined here ]
 Exploring dig site is a scene. Exploring dig site begins when the player is in the Dig Site for the first time. Exploring dig site ends when Exploring temple begins.
 
-Exploring temple is a scene. Exploring temple begins when the player is in the Underground room for the first time.
+Exploring temple is a scene. Exploring temple begins when the player is in the Underground Room for the first time.
 
 When exploring temple begins:
 	now the destination of Janice is the Underground Monolith;
