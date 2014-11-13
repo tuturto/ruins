@@ -12,6 +12,8 @@ The sky is a backdrop. The description is "the sky is completely cloudless." The
 
 The ground is a backdrop. The description is "Ground is dry and dusty." The ground is in the Dig Area.
 
+The jungle is backdrop. The description is "Thick jungle surrounds the dig site from all directions. You wouldn't want to wander in there and get lost." The jungle is in the Dig Area.
+
 [ Rooms are defined below ]
 
 The Tent is a room. The description is "Medium sized tent is filled with chairs, tables and all sorts of scientific papers and journals. Opening at the south leads outside."
@@ -84,6 +86,8 @@ Check quizzing it about:
 Check informing it about:
 	say "[The noun] only barely listens your explanation."
 
+[ Bauer ]
+
 Bauer is a man in Dig Site. The destination of Bauer is the Dig Site. The description is "Bauer is peering around through his round spectacles."
 
 Every turn when the destination of Bauer is not the location of Bauer:
@@ -93,6 +97,24 @@ Every turn when the destination of Bauer is not the location of Bauer:
 Every turn when the player is in the Dig site and Bauer is in the Dig site:
 	if a random chance of 1 in 3 succeeds:
 		say "Bauer [one of]slowly shifts through sand, while searching for artifacts[or]writes down notes into his notebook[or]closely examines pottery fragments[at random]."
+
+Every turn when the player is in the Underground Machinery and Bauer is in the Underground Machinery:
+	if a random chance of 1 in 3 succeeds:
+		say "Bauer [one of]is examining various belts and muttering to himself[or]carefully checks if any of the gears is loose[or]mutters to himself while scratching his head[or]writes down something into his notebook[at random]."
+		
+Every turn when Bauer is in the Underground Machinery:
+	if a random chance of 1 in 30 succeeds:
+		now the destination of Bauer is Underground Monolith.
+
+Every turn when the player is in the Underground Monolith and Bauer is in the Underground Monolith:
+	if a random chance of 1 in 3 succeeds:
+		say "Bauer [one of]walks around the monolith and looks at the symbols[or]closely examines some of the symbols[or]is examining the floor closely[at random]."
+
+Every turn when Bauer is in the Underground Monolith:
+	if a random chance of 1 in 30 succeeds:
+		now the destination of Bauer is the Underground Machinery. 
+
+[ Janice ]
 
 Janice is a woman in the Monolith. The destination of Janice is the Monolith. The description is "Janice is keenly observing her surroundings."
 
