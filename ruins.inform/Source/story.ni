@@ -6,7 +6,7 @@ When play begins, say "Not too long ago, ancient ruins were discovered in the Am
 
 Dig Area is a region. Camp Site, Dig Site, The Monolith and Old Temple are in Dig Area. 
 
-Underground Temple Area is a region. The Underground Machinery, the Underground Room and the Underground Monolith are in Underground Temple Area.
+Underground Temple Area is a region. The Underground Machinery, the Underground Room, Eastern Storage Room, Western Storage Room, the Underground Monolith, Monolith Base and Underground Cavern are in Underground Temple Area.
 
 [ Backdrops are defined below ]
 
@@ -49,11 +49,17 @@ understand "monolith" as monolith_scenery.
 
 Underground Room is a room. The description is "Light shines to room from the opening in the roof. Stairs made of heavy stone lead back up to the temple."
 
+Western Storage Room is west of Underground Room. The printed name of Western Storage Room is "Storage Room". The description is "Small storage room is packed full with crates."
+
+Eastern Storage Room is east of Underground Room. The printed name of Eastern Storage Room is "Storage Room." The description is "Small storage room is packaged full with crates."
+
 The Underground Monolith is southwest of the Underground Room. The description is "Large stone block pierces this room from ceiling to floor. It is covered with the same markings as the monolith above the ground."
 
 The Underground Machinery is north of the Underground Room. The description is "Medium sized room is packed full of cogs, pulleys, pipes and levers."
 
-Monolith Base is down of the Underground Monolith. The description is "Base of the monolith is enormous and fills most of the room."
+Monolith Base is a room. The description is "Base of the monolith is enormous and fills most of the room."
+
+Underground Cavern is east of Monolith Base. The description is "Cavern is so large that the light doesn't reach all the corners or ceiling."
 
 [ Items are defined below ]
 theodolite is in the Monolith. The description is "complex looking theodolite is standing on a tripod."  
