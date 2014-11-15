@@ -46,6 +46,7 @@ understand "temple" as temple_scenery.
 
 Instead of pushing the jaguar:
 	say "As you push the jaguar carving, it slowly depresses slightly. A screeching sound behind of you catches your attention and as you turn, there's an opening leading under the ground.";
+	now the description of the Old Temple is "Large stones stand at the ruins of the old temple. The roof has caved in and walls are only partially standing. The walls are covered with carvings of animals. The camp site is located to west, while the main dig site can been seen at south west direction. A stone slab has moved aside and revealed stairs leading down underground.";
 	change the down exit of the Old Temple to the Underground Room;
 	change the up exit of the Underground Room to the Old Temple.
 
@@ -91,6 +92,7 @@ Instead of pulling the levers:
 		say "Nothing happens, maybe the machine needs to be repaired first.";
 	otherwise:
 		say "Cogs start to move and pulleys tighten. You hear a low rumbling noise coming from somewhere south.";
+		now description of the Underground Monolith is "Large stone block pierces this room from ceiling to floor. It is covered with the same markings as the monolith above the ground. Stairs lead downwards around the monolith.";
 		change the down exit of the Underground Monolith to the Monolith Base;
 		change the up exit of the Monolith Base to the Underground Monolith.
 
