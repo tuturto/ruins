@@ -10,6 +10,8 @@ Test repair-machine with "north / pull lever / south / east / examine crates / s
 
 Test enter-cavern with "pull lever / south / southwest / down / east"
 
+Test me with "test enter-temple / test repair-machine / test enter-cavern"
+
 [ Regions are defined below ]
 
 Dig Area is a region. Camp Site, Dig Site, The Monolith and Old Temple are in Dig Area. 
