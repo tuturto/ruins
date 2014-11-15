@@ -6,11 +6,13 @@ When play begins, say "Not too long ago, ancient ruins were discovered in the Am
 
 Test enter-temple with "south / southwest / examine theodolite / northeast / northeast / push jaguar / down"
 
+Test repair-machine with "north / pull lever / south / east / examine crates / search crates / take cog / search crates / west / north / attach cog to machine"
+
 [ Regions are defined below ]
 
 Dig Area is a region. Camp Site, Dig Site, The Monolith and Old Temple are in Dig Area. 
 
-Underground Temple Area is a region. The Underground Machinery, the Underground Room, Eastern Storage Room, Western Storage Room, the Underground Monolith, Monolith Base and Underground Cavern are in Underground Temple Area.
+Underground Temple Area is a region. The Underground Machinery, the Underground Room, Storage Room, the Underground Monolith, Monolith Base and Underground Cavern are in Underground Temple Area.
 
 [ Backdrops are defined below ]
 
@@ -53,9 +55,17 @@ understand "monolith" as monolith_scenery.
 
 Underground Room is a room. The description is "Light shines to room from the opening in the roof. Stairs made of heavy stone lead back up to the temple."
 
-Western Storage Room is west of Underground Room. The printed name of Western Storage Room is "Storage Room". The description is "Small storage room is packed full with crates."
+Storage Room is east of Underground Room. The description is "Small storage room is packaged full with crates."
 
-Eastern Storage Room is east of Underground Room. The printed name of Eastern Storage Room is "Storage Room." The description is "Small storage room is packaged full with crates."
+crates are scenery in the Storage Room. The description is "crates of various sizes lie about."
+
+Instead of searching crates:
+	if the rock cog has not been found:
+		say "You discover a rock cog in one of the boxes.";
+		now rock cog is in Storage Room;
+		now rock cog has been found;
+	otherwise:
+		say "Rest of the boxes contain only uninteresting things."
 
 The Underground Monolith is southwest of the Underground Room. The description is "Large stone block pierces this room from ceiling to floor. It is covered with the same markings as the monolith above the ground."
 
@@ -69,10 +79,18 @@ The pipes are scenery in the Underground Machinery. The description is "Pipes ma
 
 The levers are scenery in the Underground Machinery. The description is "Several levers are on the side of the machine. They are most likely used to operate it." Understand "lever" as levers.
 
-Instead of pulling the levers:
-	say "Nothing happens."
+Instead of tying the rock cog to the Machine:
+	say "The rock cog slides into machine and fits perfectly.";
+	now the rock cog is part of the Machine;
+	now the machine is repaired.
 
-The Machine is in the Underground Machinery. The description is "Very complicated looking machine fills the room. Various cogs, pulleys, pipes and levers stuck out from it."
+Instead of pulling the levers:
+	if the machine is not repaired:
+		say "Nothing happens.";
+	otherwise:
+		say "Woop, woop."
+
+The Machine is in the Underground Machinery. The machine can be repaired or not repaired. The machine is not repaired. The description is "Very complicated looking machine fills the room. Various cogs, pulleys, pipes and levers stuck out from it."
 
 Instead of taking the Machine:
 	say "it's very large, complex and attached to the walls and floor. Better leave it where it is now."
@@ -80,6 +98,9 @@ Instead of taking the Machine:
 Monolith Base is a room. The description is "Base of the monolith is enormous and fills most of the room."
 
 Underground Cavern is east of Monolith Base. The description is "Cavern is so large that the light doesn't reach all the corners or ceiling."
+
+[ Kinds are defined below ]
+a hidden item is a kind of thing. a hidden item can be found or not found. Hidden item is usually not found.
 
 [ Items are defined below ]
 theodolite is in the Monolith. The description is "complex looking theodolite is standing on a tripod."  
@@ -90,6 +111,8 @@ Before taking the theodolite:
 
 Before examining the theodolite:
 	say "You peer through the theodolite and see an image of a jaguar carved to stone." instead.
+
+the rock cog is a thing. the rock cog is a hidden item. The description is "very finely carved rock cog."
 
 [ Scenes are defined here ]
 Exploring dig site is a scene. Exploring dig site begins when the player is in the Dig Site for the first time. Exploring dig site ends when Exploring temple begins.
