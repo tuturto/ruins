@@ -8,6 +8,8 @@ Test enter-temple with "south / southwest / examine theodolite / northeast / nor
 
 Test repair-machine with "north / pull lever / south / east / examine crates / search crates / take cog / search crates / west / north / attach cog to machine"
 
+Test enter-cavern with "pull lever / south / southwest / down / east"
+
 [ Regions are defined below ]
 
 Dig Area is a region. Camp Site, Dig Site, The Monolith and Old Temple are in Dig Area. 
@@ -86,9 +88,11 @@ Instead of tying the rock cog to the Machine:
 
 Instead of pulling the levers:
 	if the machine is not repaired:
-		say "Nothing happens.";
+		say "Nothing happens, maybe the machine needs to be repaired first.";
 	otherwise:
-		say "Woop, woop."
+		say "Cogs start to move and pulleys tighten. You hear a low rumbling noise coming from somewhere south.";
+		change the down exit of the Underground Monolith to the Monolith Base;
+		change the up exit of the Monolith Base to the Underground Monolith.
 
 The Machine is in the Underground Machinery. The machine can be repaired or not repaired. The machine is not repaired. The description is "Very complicated looking machine fills the room. Various cogs, pulleys, pipes and levers stuck out from it."
 
