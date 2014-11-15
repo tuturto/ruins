@@ -2,6 +2,10 @@
 
 When play begins, say "Not too long ago, ancient ruins were discovered in the Amazon Jungle. You have traveled there as a part of group of archaeologists, who plan to excavate the ruins and discover what secrets they hold."
 
+[ Test macros ]
+
+Test enter-temple with "south / southwest / examine theodolite / northeast / northeast / push jaguar / down"
+
 [ Regions are defined below ]
 
 Dig Area is a region. Camp Site, Dig Site, The Monolith and Old Temple are in Dig Area. 
@@ -57,6 +61,22 @@ The Underground Monolith is southwest of the Underground Room. The description i
 
 The Underground Machinery is north of the Underground Room. The description is "Medium sized room is packed full of cogs, pulleys, pipes and levers."
 
+The Cogs are scenery in the Underground Machinery. The description is "Cogs made of black stone are part of an intricate machine. It seems to one of them is missing."
+
+The pulleys are scenery in the Underground Machinery. The description is "Pulleys made of chains start from the machine and disappear through holes in the ceiling. Maybe the machine is meant to move something?"
+
+The pipes are scenery in the Underground Machinery. The description is "Pipes made of stone are attached to the machine from one end. The other ends disappear through the floor. Might this be the power source for the machine?"
+
+The levers are scenery in the Underground Machinery. The description is "Several levers are on the side of the machine. They are most likely used to operate it." Understand "lever" as levers.
+
+Instead of pulling the levers:
+	say "Nothing happens."
+
+The Machine is in the Underground Machinery. The description is "Very complicated looking machine fills the room. Various cogs, pulleys, pipes and levers stuck out from it."
+
+Instead of taking the Machine:
+	say "it's very large, complex and attached to the walls and floor. Better leave it where it is now."
+
 Monolith Base is a room. The description is "Base of the monolith is enormous and fills most of the room."
 
 Underground Cavern is east of Monolith Base. The description is "Cavern is so large that the light doesn't reach all the corners or ceiling."
@@ -108,7 +128,7 @@ Every turn when the player is in the Dig site and Bauer is in the Dig site:
 
 Every turn when the player is in the Underground Machinery and Bauer is in the Underground Machinery:
 	if a random chance of 1 in 3 succeeds:
-		say "Bauer [one of]is examining various belts and muttering to himself[or]carefully checks if any of the gears is loose[or]mutters to himself while scratching his head[or]writes down something into his notebook[at random]."
+		say "Bauer [one of]is examining various pulleys and muttering to himself[or]carefully checks if any of the gears is loose[or]mutters to himself while scratching his head[or]writes down something into his notebook[at random]."
 		
 Every turn when Bauer is in the Underground Machinery:
 	if a random chance of 1 in 30 succeeds:
