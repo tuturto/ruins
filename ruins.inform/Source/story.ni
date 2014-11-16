@@ -26,13 +26,28 @@ The ground is a backdrop. The description is "Ground is dry and dusty." The grou
 
 The jungle is backdrop. The description is "Thick jungle surrounds the dig site from all directions. You wouldn't want to wander in there and get lost." The jungle is in the Dig Area.
 
+[ new general actions ]
+Understand the command "read" as something new.
+
+Reading is an action applying to one thing and requiring light. Understand "read [something]" as reading.
+
+Check reading:
+	if player has the old journal and the noun is old journal:
+		let t be the location of player;
+		if the journal entry of t is "":
+			say "you don't find anything suitable from the journal.";
+		otherwise:
+			say journal entry of t.  
+
 [ Rooms are defined below ]
 
 The Tent is a room. The description is "Medium sized tent is filled with chairs, tables and all sorts of scientific papers and journals. Opening at the south leads outside."
 
-Camp Site is south of the Tent. The description is "Camp site has several tents scattered around. Cooking area has been set in the middle of them and to north is entrance to the main tent. Main dig site can be seen at south, while an old temple is located to east from here."
+the old journal is in the tent. The description is "This old journal is full of cryptic writings of late Mr. Johansson. Most scholars disregard it as a hoax, but maybe there's something in it still."
 
-Dig Site is south of the Camp site. The description is "Main dig site has several excavations, all neatly marked, labeled and cataloged. The main camp site is located at north from here. A well traveled path leads from south west to north east."
+Camp Site is south of the Tent. The description is "Camp site has several tents scattered around. Cooking area has been set in the middle of them and to north is entrance to the main tent. Main dig site can be seen at south, while an old temple is located to east from here.".
+
+Dig Site is south of the Camp site. The description is "Main dig site has several excavations, all neatly marked, labeled and cataloged. The main camp site is located at north from here. A well traveled path leads from south west to north east." The journal entry is "'In the jungle of Amazon lies a secret village and that village houses an entryway to a hidden temple.'"
 
 Old Temple is east of Camp site. Old Temple is northeast of the Dig site. The description is "Large stones stand at the ruins of the old temple. The roof has caved in and walls are only partially standing. The walls are covered with carvings of animals. The camp site is located to west, while the main dig site can been seen at south west direction."
 
@@ -52,7 +67,7 @@ Instead of pushing the jaguar:
 	change the down exit of the Old Temple to the Underground Room;
 	change the up exit of the Underground Room to the Old Temple.
 
-The Monolith is southwest of the Dig site. The description is "Ancient monolith stands on a stony clearing. Curious markings cover surface of it. At north east one can see the main dig site."
+The Monolith is southwest of the Dig site. The description is "Ancient monolith stands on a stony clearing. Curious markings cover surface of it. At north east one can see the main dig site." The journal entry is "'Know this: standing at the base of the world pillar, and gazing at the direction given by the runes, you shall see where the key of underworld lies.'"
 
 the monolith_scenery is scenery in the Monolith. The description is "Ancient monolith stands alone. Curious markings cover surface of it."
 
@@ -109,6 +124,8 @@ Underground Cavern is east of Monolith Base. The description is "Cavern is so la
 
 [ Kinds are defined below ]
 a hidden item is a kind of thing. a hidden item can be found or not found. Hidden item is usually not found.
+
+a room has some text called journal entry. the journal entry of a room is usually "".
 
 [ Items are defined below ]
 theodolite is in the Monolith. The description is "complex looking theodolite is standing on a tripod."  
@@ -175,7 +192,7 @@ Every turn when Bauer is in the Underground Monolith:
 
 [ Janice ]
 
-Janice is a woman in the Monolith. The destination of Janice is the Monolith. The description is "Janice is keenly observing her surroundings."
+Janice is a woman in the Monolith. The destination of Janice is the Monolith. The description is "Janice Montana is keenly observing her surroundings."
 
 Every turn when the destination of Janice is not the location of Janice:
 	let the right direction be the best route from the location of Janice to the destination of Janice;
@@ -186,16 +203,16 @@ Every turn when the player is in the Monolith and Janice is in the Monolith:
 		say "Janice [one of]is examining markings on the monolith[or]peers through theodolite[or]is making complex looking calculations in her notebook[or]stares into distance while pondering something[at random]."
 
 Instead of quizzing Janice about the theodolite during exploring dig site:
-	say "'I set it to point the direction I calculated from these markings on the monolith. I believe it's currently pointing towards that temple.'"
+	say "'I set it to point the direction I calculated from these markings on the monolith. I believe it's currently pointing towards that temple. Have a look and see by yourself.'"
 
 Instead of quizzing Janice about the monolith_scenery during exploring dig site:
 	say "'This monolith is fascinating. We haven't been able to decipher all of it, but it seems to have some very complex mathematical equations on it.'"
 
 Instead of quizzing Janice about the jaguar carving during exploring dig site:
-	say "'I'm not sure about the meaning of the jaguar carving. Might be that I have made mistake with my calculations.'"
+	say "'I'm not sure about the meaning of the jaguar carving, but I got settings for theodolite from these engravings in monolith. Maybe it would make sense to investigate the carving more closely?'"
 
 Instead of quizzing Janice about the temple_scenery during exploring dig site:
-	say "'The theodolite is currently pointing towards that old temple. I haven't really had time to go and have a proper look at it.'"
+	say "'The theodolite is currently pointing towards that old temple. There is connection between the monolith and the temple, I'm sure about that.'"
 
 Every turn when the player is in the Underground Monolith and Janice is in the Underground Monolith:
 	if a random chance of 1 in 3 succeeds:
@@ -203,3 +220,4 @@ Every turn when the player is in the Underground Monolith and Janice is in the U
 
 Instead of quizzing Janice about the monolith_scenery during exploring temple:
 	say "'It seems that the monolith is much larger than we thought as it continues further down in earth. Who would have thought that?'"
+	
