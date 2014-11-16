@@ -4,13 +4,15 @@ When play begins, say "Not too long ago, ancient ruins were discovered in the Am
 
 [ Test macros ]
 
-Test enter-temple with "south / southwest / examine theodolite / northeast / northeast / push jaguar / down"
+Test retrieve-journal with "north / take journal / south"
 
-Test repair-machine with "north / pull lever / south / east / examine crates / search crates / take cog / search crates / west / north / attach cog to machine"
+Test enter-temple with "south / southwest / read journal / examine theodolite / northeast / northeast / read journal / push jaguar / down"
 
-Test enter-cavern with "pull lever / south / southwest / down / east"
+Test repair-machine with "north / read journal / pull lever / south / east / examine crates / search crates / take cog / search crates / west / north / attach cog to machine"
 
-Test me with "test enter-temple / test repair-machine / test enter-cavern"
+Test enter-cavern with "pull lever / south / southwest / read journal / down / east"
+
+Test me with "test retrieve-journal / test enter-temple / test repair-machine / test enter-cavern"
 
 [ Regions are defined below ]
 
@@ -49,7 +51,7 @@ Camp Site is south of the Tent. The description is "Camp site has several tents 
 
 Dig Site is south of the Camp site. The description is "Main dig site has several excavations, all neatly marked, labeled and cataloged. The main camp site is located at north from here. A well traveled path leads from south west to north east." The journal entry is "'In the jungle of Amazon lies a secret village and that village houses an entryway to a hidden temple.'"
 
-Old Temple is east of Camp site. Old Temple is northeast of the Dig site. The description is "Large stones stand at the ruins of the old temple. The roof has caved in and walls are only partially standing. The walls are covered with carvings of animals. The camp site is located to west, while the main dig site can been seen at south west direction."
+Old Temple is east of Camp site. Old Temple is northeast of the Dig site. The description is "Large stones stand at the ruins of the old temple. The roof has caved in and walls are only partially standing. The walls are covered with carvings of animals. The camp site is located to west, while the main dig site can been seen at south west direction." The journal entry is "'Large circular temple, made of obsidian stones stands at the gate of the underworld.'"
 
 Animal Carvings are scenery in the Old Temple. The description is "Carvings of various jungle animals cover what's left of the walls here."
 
@@ -87,9 +89,9 @@ Instead of searching crates:
 	otherwise:
 		say "Rest of the boxes contain only uninteresting things."
 
-The Underground Monolith is southwest of the Underground Room. The description is "Large stone block pierces this room from ceiling to floor. It is covered with the same markings as the monolith above the ground."
+The Underground Monolith is southwest of the Underground Room. The description is "Large stone block pierces this room from ceiling to floor. It is covered with the same markings as the monolith above the ground." The journal entry is "'While the world pillar stands above the ground, but it has roots that reach deep underground. Only the invisible hands can open the gate for you.'"
 
-The Underground Machinery is north of the Underground Room. The description is "Medium sized room is packed full of cogs, pulleys, pipes and levers."
+The Underground Machinery is north of the Underground Room. The description is "Medium sized room is packed full of cogs, pulleys, pipes and levers." The journal entry is "'Invisible hands are commanded by the mechanical minds.'"
 
 The Cogs are scenery in the Underground Machinery. The description is "Cogs made of black stone are part of an intricate machine. It seems to one of them is missing."
 
