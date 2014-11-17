@@ -144,11 +144,17 @@ the rock cog is a thing. the rock cog is a hidden item. The description is "very
 [ Scenes are defined here ]
 Exploring dig site is a scene. Exploring dig site begins when the player is in the Dig Site for the first time. Exploring dig site ends when Exploring temple begins.
 
-Exploring temple is a scene. Exploring temple begins when the player is in the Underground Room for the first time.
+Exploring temple is a scene. Exploring temple begins when the player is in the Underground Room for the first time. Exploring temple ends when Exploring cavern begins.
 
 When exploring temple begins:
 	now the destination of Janice is the Underground Monolith;
 	now the destination of Bauer is the Underground Machinery.
+
+Exploring cavern is a scene. Exploring cavern begins when the player is in the Monolith Base for the first time.
+
+When exploring cavern begins:
+	now the destination of Janice is the Underground Cavern;
+	now the destination of Bauer is the Underground Cavern.
 
 [ Characters are defined here ]
 
