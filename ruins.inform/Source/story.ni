@@ -133,8 +133,8 @@ a room has some text called journal entry. the journal entry of a room is usuall
 theodolite is in the Monolith. The description is "complex looking theodolite is standing on a tripod."  
 
 Before taking the theodolite:
-	if Janice is in the Monolith:
-		say "Janice looks up from her notes and asks you not to remove the theodolite as she still needs it." instead.
+	if montana is in the Monolith:
+		say "Montana looks up from her notes and asks you not to remove the theodolite as she still needs it." instead.
 
 Before examining the theodolite:
 	say "You peer through the theodolite and see an image of a jaguar carved to stone." instead.
@@ -147,13 +147,13 @@ Exploring dig site is a scene. Exploring dig site begins when the player is in t
 Exploring temple is a scene. Exploring temple begins when the player is in the Underground Room for the first time. Exploring temple ends when Exploring cavern begins.
 
 When exploring temple begins:
-	now the destination of Janice is the Underground Monolith;
+	now the destination of montana is the Underground Monolith;
 	now the destination of Bauer is the Underground Machinery.
 
 Exploring cavern is a scene. Exploring cavern begins when the player is in the Monolith Base for the first time.
 
 When exploring cavern begins:
-	now the destination of Janice is the Underground Cavern;
+	now the destination of montana is the Underground Cavern;
 	now the destination of Bauer is the Underground Cavern.
 
 [ Characters are defined here ]
@@ -198,34 +198,34 @@ Every turn when Bauer is in the Underground Monolith:
 	if a random chance of 1 in 30 succeeds:
 		now the destination of Bauer is the Underground Machinery. 
 
-[ Janice ]
+[ montana ]
 
-Janice is a woman in the Monolith. The destination of Janice is the Monolith. The description is "Janice Montana is keenly observing her surroundings."
+montana is a woman in the Monolith. The destination of montana is the Monolith. The description is "Montana Jacks is keenly observing her surroundings."
 
-Every turn when the destination of Janice is not the location of Janice:
-	let the right direction be the best route from the location of Janice to the destination of Janice;
-	try Janice going the right direction.
+Every turn when the destination of montana is not the location of montana:
+	let the right direction be the best route from the location of montana to the destination of montana;
+	try montana going the right direction.
 
-Every turn when the player is in the Monolith and Janice is in the Monolith:
+Every turn when the player is in the Monolith and montana is in the Monolith:
 	if a random chance of 1 in 3 succeeds:
-		say "Janice [one of]is examining markings on the monolith[or]peers through theodolite[or]is making complex looking calculations in her notebook[or]stares into distance while pondering something[at random]."
+		say "Montana [one of]is examining markings on the monolith[or]peers through theodolite[or]is making complex looking calculations in her notebook[or]stares into distance while pondering something[at random]."
 
-Instead of quizzing Janice about the theodolite during exploring dig site:
+Instead of quizzing montana about the theodolite during exploring dig site:
 	say "'I set it to point the direction I calculated from these markings on the monolith. I believe it's currently pointing towards that temple. Have a look and see by yourself.'"
 
-Instead of quizzing Janice about the monolith_scenery during exploring dig site:
+Instead of quizzing montana about the monolith_scenery during exploring dig site:
 	say "'This monolith is fascinating. We haven't been able to decipher all of it, but it seems to have some very complex mathematical equations on it.'"
 
-Instead of quizzing Janice about the jaguar carving during exploring dig site:
+Instead of quizzing montana about the jaguar carving during exploring dig site:
 	say "'I'm not sure about the meaning of the jaguar carving, but I got settings for theodolite from these engravings in monolith. Maybe it would make sense to investigate the carving more closely?'"
 
-Instead of quizzing Janice about the temple_scenery during exploring dig site:
+Instead of quizzing montana about the temple_scenery during exploring dig site:
 	say "'The theodolite is currently pointing towards that old temple. There is connection between the monolith and the temple, I'm sure about that.'"
 
-Every turn when the player is in the Underground Monolith and Janice is in the Underground Monolith:
+Every turn when the player is in the Underground Monolith and montana is in the Underground Monolith:
 	if a random chance of 1 in 3 succeeds:
-		say "Janice [one of]is examining markings on the monolith[or]writes furiously in her notebook[or]walks around the room, lost in her thought[at random]."
+		say "Montana [one of]is examining markings on the monolith[or]writes furiously in her notebook[or]walks around the room, lost in her thought[at random]."
 
-Instead of quizzing Janice about the monolith_scenery during exploring temple:
+Instead of quizzing montana about the monolith_scenery during exploring temple:
 	say "'It seems that the monolith is much larger than we thought as it continues further down in earth. Who would have thought that?'"
 	
