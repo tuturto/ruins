@@ -10,9 +10,11 @@ Test enter-temple with "south / southwest / read journal / examine theodolite / 
 
 Test repair-machine with "north / read journal / pull lever / south / east / examine crates / search crates / take cog / search crates / west / north / attach cog to machine"
 
-Test enter-cavern with "pull lever / south / southwest / read journal / down / east"
+Test enter-cavern with "pull lever / south / southwest / read journal / down / east / examine scale model"
 
-Test me with "test retrieve-journal / test enter-temple / test repair-machine / test enter-cavern"
+Test enter-jeep with "west / up / northeast / up / west / enter jeep"
+
+Test me with "test retrieve-journal / test enter-temple / test repair-machine / test enter-cavern / test enter-jeep"
 
 [ Regions are defined below ]
 
@@ -47,7 +49,15 @@ The Tent is a room. The description is "Medium sized tent is filled with chairs,
 
 the old journal is in the tent. The description is "This old journal is full of cryptic writings of late Mr. Johansson. Most scholars disregard it as a hoax, but maybe there's something in it still."
 
-Camp Site is south of the Tent. The description is "Camp site has several tents scattered around. Cooking area has been set in the middle of them and to north is entrance to the main tent. Main dig site can be seen at south, while an old temple is located to east from here.".
+Camp Site is south of the Tent. The description is "Camp site has several tents scattered around. Cooking area has been set in the middle of them and to north is entrance to the main tent. Main dig site can be seen at south, while an old temple is located to east from here. An old jeep is standing near by".
+
+the jeep is scenery in the Camp Site. The description is "this old jeep has seen better days, but it seems to be in driveable condition still."
+
+instead of entering jeep during exploring cavern:
+	say "Let's get going."
+
+instead of entering jeep:
+	say "It's not time to leave yet."
 
 Dig Site is south of the Camp site. The description is "Main dig site has several excavations, all neatly marked, labeled and cataloged. The main camp site is located at north from here. A well traveled path leads from south west to north east." The journal entry is "'In the jungle of Amazon lies a secret village and that village houses an entryway to a hidden temple.'"
 
@@ -122,7 +132,13 @@ Instead of taking the Machine:
 
 Monolith Base is a room. The description is "Base of the monolith is enormous and fills most of the room."
 
-Underground Cavern is east of Monolith Base. The description is "Cavern is so large that the light doesn't reach all the corners or ceiling."
+monolith_base is scenery in the Monolith Base. The description is "at this depth the monolith is enormous. It is covered with the same markings as the upper levels."
+
+Understand "monolith" as monolith_base.
+
+Underground Cavern is east of Monolith Base. The description is "Cavern is so large that the light doesn't reach all the corners or ceiling. The floor is covered by a scale model of some sort."
+
+scale model is a scenery in the Underground Cavern. The description is "The scale model seems to represent portion of the earth. There are large temple like structures that you don't recognize at all and one of them is located directly where the dig site is."
 
 [ Kinds are defined below ]
 a hidden item is a kind of thing. a hidden item can be found or not found. Hidden item is usually not found.
@@ -133,7 +149,7 @@ a room has some text called journal entry. the journal entry of a room is usuall
 theodolite is in the Monolith. The description is "complex looking theodolite is standing on a tripod."  
 
 Before taking the theodolite:
-	if montana is in the Monolith:
+	if Montana is in the Monolith:
 		say "Montana looks up from her notes and asks you not to remove the theodolite as she still needs it." instead.
 
 Before examining the theodolite:
@@ -147,13 +163,13 @@ Exploring dig site is a scene. Exploring dig site begins when the player is in t
 Exploring temple is a scene. Exploring temple begins when the player is in the Underground Room for the first time. Exploring temple ends when Exploring cavern begins.
 
 When exploring temple begins:
-	now the destination of montana is the Underground Monolith;
+	now the destination of Montana is the Underground Monolith;
 	now the destination of Bauer is the Underground Machinery.
 
 Exploring cavern is a scene. Exploring cavern begins when the player is in the Monolith Base for the first time.
 
 When exploring cavern begins:
-	now the destination of montana is the Underground Cavern;
+	now the destination of Montana is the Underground Cavern;
 	now the destination of Bauer is the Underground Cavern.
 
 [ Characters are defined here ]
@@ -198,34 +214,39 @@ Every turn when Bauer is in the Underground Monolith:
 	if a random chance of 1 in 30 succeeds:
 		now the destination of Bauer is the Underground Machinery. 
 
-[ montana ]
+Instead of quizzing Bauer about the scale model during exploring cavern:
+	say "'I have never seen anything like that. Look at it. See this temple here? It's right where the dig site is located. And there are other temples too. This must mean that there are other locations like this around the world.'";
+	say "'We better head back home and plan sending expeditions to other sites. This is really big discovery and I want us to be the ones researching it further.'";
+	say "'There's a jeep at the dig site that we can take back to the airport.'".
 
-montana is a woman in the Monolith. The destination of montana is the Monolith. The description is "Montana Jacks is keenly observing her surroundings."
+[ Montana ]
 
-Every turn when the destination of montana is not the location of montana:
-	let the right direction be the best route from the location of montana to the destination of montana;
-	try montana going the right direction.
+Montana is a woman in the Monolith. The destination of Montana is the Monolith. The description is "Montana Jacks is keenly observing her surroundings."
 
-Every turn when the player is in the Monolith and montana is in the Monolith:
+Every turn when the destination of Montana is not the location of Montana:
+	let the right direction be the best route from the location of Montana to the destination of Montana;
+	try Montana going the right direction.
+
+Every turn when the player is in the Monolith and Montana is in the Monolith:
 	if a random chance of 1 in 3 succeeds:
 		say "Montana [one of]is examining markings on the monolith[or]peers through theodolite[or]is making complex looking calculations in her notebook[or]stares into distance while pondering something[at random]."
 
-Instead of quizzing montana about the theodolite during exploring dig site:
+Instead of quizzing Montana about the theodolite during exploring dig site:
 	say "'I set it to point the direction I calculated from these markings on the monolith. I believe it's currently pointing towards that temple. Have a look and see by yourself.'"
 
-Instead of quizzing montana about the monolith_scenery during exploring dig site:
+Instead of quizzing Montana about the monolith_scenery during exploring dig site:
 	say "'This monolith is fascinating. We haven't been able to decipher all of it, but it seems to have some very complex mathematical equations on it.'"
 
-Instead of quizzing montana about the jaguar carving during exploring dig site:
+Instead of quizzing Montana about the jaguar carving during exploring dig site:
 	say "'I'm not sure about the meaning of the jaguar carving, but I got settings for theodolite from these engravings in monolith. Maybe it would make sense to investigate the carving more closely?'"
 
-Instead of quizzing montana about the temple_scenery during exploring dig site:
+Instead of quizzing Montana about the temple_scenery during exploring dig site:
 	say "'The theodolite is currently pointing towards that old temple. There is connection between the monolith and the temple, I'm sure about that.'"
 
-Every turn when the player is in the Underground Monolith and montana is in the Underground Monolith:
+Every turn when the player is in the Underground Monolith and Montana is in the Underground Monolith:
 	if a random chance of 1 in 3 succeeds:
 		say "Montana [one of]is examining markings on the monolith[or]writes furiously in her notebook[or]walks around the room, lost in her thought[at random]."
 
-Instead of quizzing montana about the monolith_scenery during exploring temple:
+Instead of quizzing Montana about the monolith_scenery during exploring temple:
 	say "'It seems that the monolith is much larger than we thought as it continues further down in earth. Who would have thought that?'"
 	
