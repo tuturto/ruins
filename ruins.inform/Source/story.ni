@@ -1,8 +1,31 @@
 "Secret of the Ruins" by "Tuukka Turto"
 
-When play begins, say "Not too long ago, ancient ruins were discovered in the Amazon Jungle. You have traveled there as a part of group of archaeologists, who plan to excavate the ruins and discover what secrets they hold."
+When play begins:
+	say "Not too long ago, ancient ruins were discovered in the Amazon Jungle. You have traveled there as a part of group of archaeologists, who plan to excavate the ruins and discover what secrets they hold.".
 
-[ Test macros ]
+Book - General
+
+Section - Actions
+
+Quizzing it about is an action applying to one thing and one visible thing. Understand "ask [someone] about [any thing]" and "quiz [someone] about [any thing]" as quizzing it about.
+
+Informing it about is an action applying to one thing and one visible thing. Understand "tell [someone] about [any thing]" and "inform [someone] about [any thing]" as informing it about.
+
+Check quizzing it about:
+	say "[The noun] shrugs unhelpfully."
+
+Check informing it about:
+	say "[The noun] only barely listens your explanation."
+
+Section - New Kinds and Properties
+
+A person has a room called destination.
+
+a hidden item is a kind of thing. a hidden item can be found or not found. Hidden item is usually not found.
+
+a room has some text called journal entry. the journal entry of a room is usually "".
+
+Book - Secret of the Ruins
 
 Test retrieve-journal with "north / take journal / south"
 
@@ -16,13 +39,31 @@ Test enter-jeep with "west / up / northeast / up / west / enter jeep"
 
 Test me with "test retrieve-journal / test enter-temple / test repair-machine / test enter-cavern / test enter-jeep"
 
-[ Regions are defined below ]
+
+
+Montana is a woman. The description is "Montana Jacks is keenly observing her surroundings."
+
+Every turn when the destination of Montana is not the location of Montana and Montana is not off-stage:
+	let the right direction be the best route from the location of Montana to the destination of Montana;
+		try Montana going the right direction.
+
+Bauer is a man. The description is "Bauer is peering around through his round spectacles."
+
+Every turn when the destination of Bauer is not the location of Bauer and Bauer is not off-stage:
+	let the right direction be the best route from the location of Bauer to the destination of Bauer;
+			try Bauer going the right direction.
+
+Chapter - Prologue
+
+Section - Regions
+
+Start Area is a region. The Tent is in Start Area.
 
 Dig Area is a region. Camp Site, Dig Site, The Monolith and Old Temple are in Dig Area. 
 
 Underground Temple Area is a region. The Underground Machinery, the Underground Room, Storage Room, the Underground Monolith, Monolith Base and Underground Cavern are in Underground Temple Area.
 
-[ Backdrops are defined below ]
+Section - Backdrops
 
 The sky is a backdrop. The description is "the sky is completely cloudless." The sky is in the Dig Area.
 
@@ -30,7 +71,8 @@ The ground is a backdrop. The description is "Ground is dry and dusty." The grou
 
 The jungle is backdrop. The description is "Thick jungle surrounds the dig site from all directions. You wouldn't want to wander in there and get lost." The jungle is in the Dig Area.
 
-[ new general actions ]
+Section - Actions
+
 Understand the command "read" as something new.
 
 Reading is an action applying to one thing and requiring light. Understand "read [something]" as reading.
@@ -43,7 +85,7 @@ Check reading:
 		otherwise:
 			say journal entry of t.  
 
-[ Rooms are defined below ]
+Section - Rooms
 
 The Tent is a room. The description is "Medium sized tent is filled with chairs, tables and all sorts of scientific papers and journals. Opening at the south leads outside."
 
@@ -140,12 +182,8 @@ Underground Cavern is east of Monolith Base. The description is "Cavern is so la
 
 scale model is a scenery in the Underground Cavern. The description is "The scale model seems to represent portion of the earth. There are large temple like structures that you don't recognize at all and one of them is located directly where the dig site is."
 
-[ Kinds are defined below ]
-a hidden item is a kind of thing. a hidden item can be found or not found. Hidden item is usually not found.
+Section - Items
 
-a room has some text called journal entry. the journal entry of a room is usually "".
-
-[ Items are defined below ]
 theodolite is in the Monolith. The description is "complex looking theodolite is standing on a tripod."  
 
 Before taking the theodolite:
@@ -157,8 +195,15 @@ Before examining the theodolite:
 
 the rock cog is a thing. the rock cog is a hidden item. The description is "very finely carved rock cog."
 
-[ Scenes are defined here ]
-Exploring dig site is a scene. Exploring dig site begins when the player is in the Dig Site for the first time. Exploring dig site ends when Exploring temple begins.
+Section - Scenes
+
+Exploring dig site is a scene. Exploring dig site begins when the player is in the Camp Site for the first time. Exploring dig site ends when Exploring temple begins.
+
+When Exploring dig site begins:
+	now Montana is in the Monolith;
+	now the destination of Montana is the Monolith;
+	now Bauer is in the Dig Site;
+	now the destination of Bauer is the Dig Site.
 
 Exploring temple is a scene. Exploring temple begins when the player is in the Underground Room for the first time. Exploring temple ends when Exploring cavern begins.
 
@@ -172,27 +217,9 @@ When exploring cavern begins:
 	now the destination of Montana is the Underground Cavern;
 	now the destination of Bauer is the Underground Cavern.
 
-[ Characters are defined here ]
-
-A person has a room called destination.
-
-Quizzing it about is an action applying to one thing and one visible thing. Understand "ask [someone] about [any thing]" and "quiz [someone] about [any thing]" as quizzing it about.
-
-Informing it about is an action applying to one thing and one visible thing. Understand "tell [someone] about [any thing]" and "inform [someone] about [any thing]" as informing it about.
-
-Check quizzing it about:
-	say "[The noun] shrugs unhelpfully."
-
-Check informing it about:
-	say "[The noun] only barely listens your explanation."
+Section - Characters
 
 [ Bauer ]
-
-Bauer is a man in Dig Site. The destination of Bauer is the Dig Site. The description is "Bauer is peering around through his round spectacles."
-
-Every turn when the destination of Bauer is not the location of Bauer:
-	let the right direction be the best route from the location of Bauer to the destination of Bauer;
-		try Bauer going the right direction.
 
 Instead of quizzing Bauer about the old journal:
 	say "'I'm positively sure that the Journal of Dichomitus is not a hoax.'"
@@ -223,12 +250,6 @@ Instead of quizzing Bauer about the scale model during exploring cavern:
 	say "'There's a jeep at the dig site that we can take back to the airport.'".
 
 [ Montana ]
-
-Montana is a woman in the Monolith. The destination of Montana is the Monolith. The description is "Montana Jacks is keenly observing her surroundings."
-
-Every turn when the destination of Montana is not the location of Montana:
-	let the right direction be the best route from the location of Montana to the destination of Montana;
-	try Montana going the right direction.
 
 Every turn when the player is in the Monolith and Montana is in the Monolith:
 	if a random chance of 1 in 3 succeeds:
