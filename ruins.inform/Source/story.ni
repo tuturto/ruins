@@ -136,7 +136,7 @@ monolith_base is scenery in the Monolith Base. The description is "at this depth
 
 Understand "monolith" as monolith_base.
 
-Underground Cavern is east of Monolith Base. The description is "Cavern is so large that the light doesn't reach all the corners or ceiling. The floor is covered by a scale model of some sort."
+Underground Cavern is east of Monolith Base. The description is "Cavern is so large that the light doesn't reach all the corners or ceiling. The floor is covered by a scale model of some sort." The journal entry is "'Know location of one of the temples, and you'll know location of all the temples.'"
 
 scale model is a scenery in the Underground Cavern. The description is "The scale model seems to represent portion of the earth. There are large temple like structures that you don't recognize at all and one of them is located directly where the dig site is."
 
@@ -194,6 +194,9 @@ Every turn when the destination of Bauer is not the location of Bauer:
 	let the right direction be the best route from the location of Bauer to the destination of Bauer;
 		try Bauer going the right direction.
 
+Instead of quizzing Bauer about the old journal:
+	say "'I'm positively sure that the Journal of Dichomitus is not a hoax.'"
+
 Every turn when the player is in the Dig site and Bauer is in the Dig site:
 	if a random chance of 1 in 3 succeeds:
 		say "Bauer [one of]slowly shifts through sand, while searching for artifacts[or]writes down notes into his notebook[or]closely examines pottery fragments[at random]."
@@ -231,6 +234,9 @@ Every turn when the player is in the Monolith and Montana is in the Monolith:
 	if a random chance of 1 in 3 succeeds:
 		say "Montana [one of]is examining markings on the monolith[or]peers through theodolite[or]is making complex looking calculations in her notebook[or]stares into distance while pondering something[at random]."
 
+Instead of quizzing Montana about the old journal:
+	say "'I used to think that the Journal of Dichomitus was just an elaborate hoax, but the recent events indicate that this might not be the case.'"
+
 Instead of quizzing Montana about the theodolite during exploring dig site:
 	say "'I set it to point the direction I calculated from these markings on the monolith. I believe it's currently pointing towards that temple. Have a look and see by yourself.'"
 
@@ -249,4 +255,6 @@ Every turn when the player is in the Underground Monolith and Montana is in the 
 
 Instead of quizzing Montana about the monolith_scenery during exploring temple:
 	say "'It seems that the monolith is much larger than we thought as it continues further down in earth. Who would have thought that?'"
-	
+
+Instead of quizzing Montana about the scale model during exploring cavern:
+	say "'That seems to be a map of some sort. Dr.Bauer will be thrilled to examine it.'"
