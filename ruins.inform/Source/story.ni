@@ -285,6 +285,8 @@ Chapter - At the Museum
 
 Section - Regions
 
+Museum Area is a region. Study and Grand Hall are in Museum Area.
+
 Section - Backdrops
 
 Section - Actions
@@ -299,7 +301,7 @@ Section - Items
 
 Section - Scenes
 
-Meeting in Study is a scene. Meeting in Study begins when the Player is in Study for the first time.
+Meeting in Study is a scene. Meeting in Study begins when the Player is in Study for the first time. Meeting in Study ends when Two Archaeologists begins.
 
 When Meeting in Study begins:
 	now Bauer is in Grand Hall;
@@ -307,5 +309,15 @@ When Meeting in Study begins:
 	now Montana is in Grand Hall;
 	now destination of Montana is Study.
 
+Two Archaeologists is a scene. Two Archaeologists begins when Bauer is in Study for the first time.
+
+When Two Archaeologists begins:
+	now destination of Montana is off-stage.;
+	say "'I hope you did not have to wait for long. I was making arrangements with Dr. Jacks concerning to the next move. Car should be outside soon and it will take you to the airport. From there you and Dr. Jacks will take an airplane and fly to Zambia where the next temple is located.'[paragraph break]'If you have any questions before you go, now is the time to ask them. As I said, the car will be outside soon, so you can leave when ever you feel ready.'"
+
 Section - Characters
 
+Every turn during the Two Archaeologists:
+	if the location of Montana is not the location of the Player:
+		let the right direction be the best route from the location of Montana to the location of Player;
+		try Montana going the right direction.
