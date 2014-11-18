@@ -27,7 +27,7 @@ a room has some text called journal entry. the journal entry of a room is usuall
 
 Book - Secret of the Ruins
 
-Test retrieve-journal with "north / take journal / south"
+Test retrieve-journal with "take journal / south"
 
 Test enter-temple with "south / southwest / read journal / examine theodolite / northeast / northeast / read journal / push jaguar / down"
 
@@ -96,7 +96,8 @@ Camp Site is south of the Tent. The description is "Camp site has several tents 
 the jeep is scenery in the Camp Site. The description is "this old jeep has seen better days, but it seems to be in driveable condition still."
 
 instead of entering jeep during exploring cavern:
-	say "Let's get going."
+	say "You hop into the jeep and wait for Dr. Bauer and Montana to catch up. The drive to airport and the subsequent flight back to New York are uneventful and soon you find yourself back in the museum.";
+	now the Player is in Study.
 
 instead of entering jeep:
 	say "It's not time to leave yet."
@@ -211,7 +212,7 @@ When exploring temple begins:
 	now the destination of Montana is the Underground Monolith;
 	now the destination of Bauer is the Underground Machinery.
 
-Exploring cavern is a scene. Exploring cavern begins when the player is in the Monolith Base for the first time.
+Exploring cavern is a scene. Exploring cavern begins when the player is in the Monolith Base for the first time. Exploring cavern ends when Meeting in Study begins.
 
 When exploring cavern begins:
 	now the destination of Montana is the Underground Cavern;
@@ -279,3 +280,32 @@ Instead of quizzing Montana about the monolith_scenery during exploring temple:
 
 Instead of quizzing Montana about the scale model during exploring cavern:
 	say "'That seems to be a map of some sort. Dr.Bauer will be thrilled to examine it.'"
+
+Chapter - At the Museum
+
+Section - Regions
+
+Section - Backdrops
+
+Section - Actions
+
+Section - Rooms
+
+Study is a room. The description is "Dr. Bauer's study is filled to the brim with books, scrolls and ancient items. There probably is a method in this chaos, but you fail to see it."
+
+Grand Hall is south of the Study. The description is "The grand hall of the museum is large and full of polished marble."
+
+Section - Items
+
+Section - Scenes
+
+Meeting in Study is a scene. Meeting in Study begins when the Player is in Study for the first time.
+
+When Meeting in Study begins:
+	now Bauer is in Grand Hall;
+	now destination of Bauer is Study;
+	now Montana is in Grand Hall;
+	now destination of Montana is Study.
+
+Section - Characters
+
