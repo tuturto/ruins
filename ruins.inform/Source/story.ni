@@ -287,6 +287,8 @@ Section - Regions
 
 Museum Area is a region. Study and Grand Hall are in Museum Area.
 
+Jungle Area is a region. Jungle Road, Jungle Path, Riverbank, Waterfall and Waterfall Basin are in Jungle Area.
+
 Section - Backdrops
 
 Section - Actions
@@ -296,6 +298,16 @@ Section - Rooms
 Study is a room. The description is "Dr. Bauer's study is filled to the brim with books, scrolls and ancient items. There probably is a method in this chaos, but you fail to see it."
 
 Grand Hall is south of the Study. The description is "The grand hall of the museum is large and full of polished marble."
+
+Jungle Road is a room. The description is "This is end of the road and closest to the suspected location of the temple that you can get with car."
+
+Jungle Path is northeast of Jungle Road. The description is "A small path leads through the jungle, but this seems to be as far as you can get."
+
+Riverbank is north of Jungle Path. The description is "A large stream cuts through the jungle."
+
+Waterfall is west of Riverbank. The description is "The river plummets down here, forming a large waterfall."
+
+Waterfall Basin is down of Waterfall. The description is "Roar of the waterfall is deafening down here."
 
 Section - Items
 
