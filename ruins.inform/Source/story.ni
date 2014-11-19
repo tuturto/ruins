@@ -287,7 +287,9 @@ Section - Regions
 
 Museum Area is a region. Study and Grand Hall are in Museum Area.
 
-Jungle Area is a region. Jungle Road, Jungle Path, Riverbank, Waterfall and Waterfall Basin are in Jungle Area.
+Jungle Area is a region. Jungle Road, Jungle Path, Riverbank, Waterfall, Waterfall Basin are in Jungle Area.
+
+Jungle Cave Area is region. Behind the Waterfall, Large Cave, Winding Stairs, Dusty Lair are in Jungle Cave Area.
 
 Section - Backdrops
 
@@ -308,6 +310,18 @@ Riverbank is north of Jungle Path. The description is "A large stream cuts throu
 Waterfall is west of Riverbank. The description is "The river plummets down here, forming a large waterfall."
 
 Waterfall Basin is down of Waterfall. The description is "Roar of the waterfall is deafening down here."
+
+Behind the Waterfall is east of Waterfall Basin. The description is "A small cave continues deeper towards east. At west the waterfall forms a solid wall of water."
+
+[ TODO: put a fancy trap here ] 
+
+Large Cave is east of Behind the Waterfall. The description is "Roar of the waterfall is quieter here, but you can still hear it coming from west. Four braziers stand in corners of the cavern."
+
+Winding Stairs is down from Large Cave. Description is "Winding stairs lead deeper underground."
+
+Dusty Lair is down from Winding Stairs. The description is "The lair is silent and dust covers the ground. Nobody probably has been here in centuries."
+
+[ TODO: invisible shambler here ]
 
 Section - Items
 
