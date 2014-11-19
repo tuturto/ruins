@@ -37,13 +37,15 @@ Test enter-cavern with "pull lever / south / southwest / read journal / down / e
 
 Test enter-jeep with "west / up / northeast / up / west / enter jeep"
 
-Test me with "test retrieve-journal / test enter-temple / test repair-machine / test enter-cavern / test enter-jeep"
+Test travel-waterfall with "south / south / enter car / northeast / north / west"
+
+Test me with "test retrieve-journal / test enter-temple / test repair-machine / test enter-cavern / test enter-jeep / test travel-waterfall"
 
 
 
 Montana is a woman. The description is "Montana Jacks is keenly observing her surroundings."
 
-Every turn when the destination of Montana is not the location of Montana and Montana is not off-stage:
+Every turn when the destination of Montana is not the location of Montana and Montana is not off-stage and destination of Montana is not off-stage:
 	let the right direction be the best route from the location of Montana to the destination of Montana;
 		try Montana going the right direction.
 
@@ -301,6 +303,17 @@ Study is a room. The description is "Dr. Bauer's study is filled to the brim wit
 
 Grand Hall is south of the Study. The description is "The grand hall of the museum is large and full of polished marble."
 
+Front of Museum is south of Grand Hall. The description is "Cars are passing by on a busy road. At north looms the very impressive looking museum."
+
+the car is scenery in the Front of Museum. The description is "A modern taxi is standing here, waiting for you to get in."
+
+instead of entering car during jungle adventure:
+	say "Taxi, Airplane more jeeping. TODO: fix this later.";
+		now the Player is in Jungle Road;
+		now Montana is in Jungle Road.
+
+understand "taxi" as car.
+
 Jungle Road is a room. The description is "This is end of the road and closest to the suspected location of the temple that you can get with car."
 
 Jungle Path is northeast of Jungle Road. The description is "A small path leads through the jungle, but this seems to be as far as you can get."
@@ -340,6 +353,8 @@ Two Archaeologists is a scene. Two Archaeologists begins when Bauer is in Study 
 When Two Archaeologists begins:
 	now destination of Montana is off-stage.;
 	say "'I hope you did not have to wait for long. I was making arrangements with Dr. Jacks concerning to the next move. Car should be outside soon and it will take you to the airport. From there you and Dr. Jacks will take an airplane and fly to Zambia where the next temple is located.'[paragraph break]'If you have any questions before you go, now is the time to ask them. As I said, the car will be outside soon, so you can leave when ever you feel ready.'"
+
+Jungle Adventure is a scene. Jungle Adventure begins when Bauer is in Study for the first time.
 
 Section - Characters
 
