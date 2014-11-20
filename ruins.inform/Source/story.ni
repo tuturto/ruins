@@ -37,7 +37,7 @@ Test enter-cavern with "pull lever / south / southwest / read journal / down / e
 
 Test enter-jeep with "west / up / northeast / up / west / enter jeep"
 
-Test travel-waterfall with "south / south / enter car / northeast / north / west"
+Test travel-waterfall with "south / south / enter car / examine jeep / take machete / northeast / north / west"
 
 Test me with "test retrieve-journal / test enter-temple / test repair-machine / test enter-cavern / test enter-jeep / test travel-waterfall"
 
@@ -95,7 +95,7 @@ the old journal is in the tent. The description is "This old journal is full of 
 
 Camp Site is south of the Tent. The description is "Camp site has several tents scattered around. Cooking area has been set in the middle of them and to north is entrance to the main tent. Main dig site can be seen at south, while an old temple is located to east from here. An old jeep is standing near by".
 
-the jeep is scenery in the Camp Site. The description is "this old jeep has seen better days, but it seems to be in driveable condition still."
+the jeep is an enterable scenery container in the Camp Site. The description is "this old jeep has seen better days, but it seems to be in driveable condition still."
 
 instead of entering jeep during exploring cavern:
 	say "You hop into the jeep and wait for Dr. Bauer and Montana to catch up. The drive to airport and the subsequent flight back to New York are uneventful and soon you find yourself back in the museum.";
@@ -316,9 +316,21 @@ understand "taxi" as car.
 
 Jungle Road is a room. The description is "This is end of the road and closest to the suspected location of the temple that you can get with car."
 
+the jeep_2 is enterable scenery container in the Jungle Road. The printed name is "jeep". The description is "this old jeep has seen better days, but it seems to be in driveable condition still."
+
+machete is in jeep_2. The description is "the machete looks very sharp."
+
+understand "jeep" as jeep_2
+
+[ TODO: vines ]
+
 Jungle Path is northeast of Jungle Road. The description is "A small path leads through the jungle, but this seems to be as far as you can get."
 
+[ TODO: vines ]
+
 Riverbank is north of Jungle Path. The description is "A large stream cuts through the jungle."
+
+[ TODO: vines ]
 
 Waterfall is west of Riverbank. The description is "The river plummets down here, forming a large waterfall."
 
