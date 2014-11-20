@@ -37,7 +37,7 @@ Test enter-cavern with "pull lever / south / southwest / read journal / down / e
 
 Test enter-jeep with "west / up / northeast / up / west / enter jeep"
 
-Test travel-waterfall with "south / south / enter car / examine jeep / take machete / northeast / north / west"
+Test travel-waterfall with "south / south / enter car / examine jeep / take all / northeast / cut vines / northeast / north / cut vines / north / west / cut vines / west"
 
 Test me with "test retrieve-journal / test enter-temple / test repair-machine / test enter-cavern / test enter-jeep / test travel-waterfall"
 
@@ -320,17 +320,59 @@ the jeep_2 is enterable scenery container in the Jungle Road. The printed name i
 
 machete is in jeep_2. The description is "the machete looks very sharp."
 
+rope is in jeep_2. The description is "long coil of hempen rope."
+
 understand "jeep" as jeep_2
 
-[ TODO: vines ]
+vines are scenery in Jungle Road. The description is "thick wall of vines block your movement."
+
+Before going northeast in Jungle Road:
+	if vines are in Jungle Road:
+		say "thick vines block your path.";
+		stop the action.
+
+Instead of cutting vines:
+	if player has machete:
+		remove vines from play;
+		say "you clear the path.";
+	otherwise:
+		say "you lack proper tools."
 
 Jungle Path is northeast of Jungle Road. The description is "A small path leads through the jungle, but this seems to be as far as you can get."
 
-[ TODO: vines ]
+vines_2 are scenery in Jungle Path. The printed name is "vines". The description is "thick wall of vines block your movement."
+
+understand "vines" as vines_2.
+
+Before going north in Jungle Path:
+	if vines_2 are in Jungle Path:
+		say "thick vines block your path.";
+		stop the action.
+
+Instead of cutting vines_2:
+	if player has machete:
+		remove vines_2 from play;
+		say "you clear the path.";
+	otherwise:
+		say "you lack proper tools."
 
 Riverbank is north of Jungle Path. The description is "A large stream cuts through the jungle."
 
-[ TODO: vines ]
+vines_3 are scenery in Riverbank. The printed name is "vines". The description is "thick wall of vines block your movement."
+
+understand "vines" as vines_3.
+
+Before going west in Riverbank:
+	if vines_3 are in Riverbank:
+		say "thick vines block your path.";
+		stop the action.
+					
+Instead of cutting vines_3:
+	if player has machete:
+		remove vines_3 from play;
+		say "you clear the path.";
+	otherwise:
+		say "you lack proper tools."
 
 Waterfall is west of Riverbank. The description is "The river plummets down here, forming a large waterfall."
 
@@ -374,3 +416,4 @@ Every turn during the Two Archaeologists:
 	if the location of Montana is not the location of the Player:
 		let the right direction be the best route from the location of Montana to the location of Player;
 		try Montana going the right direction.
+		
