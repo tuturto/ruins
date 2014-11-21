@@ -23,6 +23,8 @@ A person has a room called destination.
 
 a hidden item is a kind of thing. a hidden item can be found or not found. Hidden item is usually not found.
 
+a mapping item is a kind of thing. a mapping item has room called destination.
+
 a room has some text called journal entry. the journal entry of a room is usually "".
 
 Book - Secret of the Ruins
@@ -37,7 +39,7 @@ Test enter-cavern with "pull lever / south / southwest / read journal / down / e
 
 Test enter-jeep with "west / up / northeast / up / west / enter jeep"
 
-Test travel-waterfall with "south / south / enter car / examine jeep / take all / northeast / cut vines / northeast / north / cut vines / north / west / cut vines / west"
+Test travel-waterfall with "take all / south / south / enter car / examine jeep / take all / examine map / northeast / cut vines / northeast / examine map / north / cut vines / north / examine map / west / cut vines / west"
 
 Test me with "test retrieve-journal / test enter-temple / test repair-machine / test enter-cavern / test enter-jeep / test travel-waterfall"
 
@@ -297,9 +299,21 @@ Section - Backdrops
 
 Section - Actions
 
+Instead of examining the old map:
+	if location of the player is the destination of the noun:
+		say "[the description of the noun] You have arrived at the location marked in the map.";	
+	otherwise:
+		let way be the best route from the location of the player to the destination of the noun;
+		if the way is not a direction:
+			say "[the description of the noun]";
+		otherwise:
+			say "[the description of the noun] The map indicates that the correct direction to travel is [way]".
+
 Section - Rooms
 
 Study is a room. The description is "Dr. Bauer's study is filled to the brim with books, scrolls and ancient items. There probably is a method in this chaos, but you fail to see it."
+
+the old map is in Study.
 
 Grand Hall is south of the Study. The description is "The grand hall of the museum is large and full of polished marble."
 
@@ -392,6 +406,8 @@ Dusty Lair is down from Winding Stairs. The description is "The lair is silent a
 
 Section - Items
 
+the old map is a mapping item. The description is "large map shows detailed view of the region." The destination of the old map is Waterfall Basin.
+
 Section - Scenes
 
 Meeting in Study is a scene. Meeting in Study begins when the Player is in Study for the first time. Meeting in Study ends when Two Archaeologists begins.
@@ -406,7 +422,7 @@ Two Archaeologists is a scene. Two Archaeologists begins when Bauer is in Study 
 
 When Two Archaeologists begins:
 	now destination of Montana is off-stage.;
-	say "'I hope you did not have to wait for long. I was making arrangements with Dr. Jacks concerning to the next move. Car should be outside soon and it will take you to the airport. From there you and Dr. Jacks will take an airplane and fly to Zambia where the next temple is located.'[paragraph break]'If you have any questions before you go, now is the time to ask them. As I said, the car will be outside soon, so you can leave when ever you feel ready.'"
+	say "'I hope you did not have to wait for long. I was making arrangements with Dr. Jacks concerning to the next move. Car should be outside soon and it will take you to the airport. From there you and Dr. Jacks will take an airplane and fly to Zambia where the next temple is located.'[paragraph break]'Take this map with you. I have marked location of the temple on it. If you have any questions before you go, now is the time to ask them. As I said, the car will be outside soon, so you can leave when ever you feel ready.'"
 
 Jungle Adventure is a scene. Jungle Adventure begins when Bauer is in Study for the first time.
 
