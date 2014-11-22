@@ -39,7 +39,7 @@ Test enter-cavern with "pull lever / south / southwest / read journal / down / e
 
 Test enter-jeep with "west / up / northeast / up / west / enter jeep"
 
-Test travel-waterfall with "take all / south / south / enter car / examine jeep / take all / examine map / northeast / cut vines / northeast / examine map / north / cut vines / north / examine map / west / cut vines / west"
+Test travel-waterfall with "take all / south / south / enter car / examine jeep / take all / examine map / northeast / cut vines / northeast / examine map / north / examine map / north / cut vines / north / examine map / west / cut vines / west"
 
 Test me with "test retrieve-journal / test enter-temple / test repair-machine / test enter-cavern / test enter-jeep / test travel-waterfall"
 
@@ -58,22 +58,6 @@ Every turn when the destination of Bauer is not the location of Bauer and Bauer 
 			try Bauer going the right direction.
 
 Chapter - Prologue
-
-Section - Regions
-
-Start Area is a region. The Tent is in Start Area.
-
-Dig Area is a region. Camp Site, Dig Site, The Monolith and Old Temple are in Dig Area. 
-
-Underground Temple Area is a region. The Underground Machinery, the Underground Room, Storage Room, the Underground Monolith, Monolith Base and Underground Cavern are in Underground Temple Area.
-
-Section - Backdrops
-
-The sky is a backdrop. The description is "the sky is completely cloudless." The sky is in the Dig Area.
-
-The ground is a backdrop. The description is "Ground is dry and dusty." The ground is in the Dig Area.
-
-The jungle is backdrop. The description is "Thick jungle surrounds the dig site from all directions. You wouldn't want to wander in there and get lost." The jungle is in the Dig Area.
 
 Section - Actions
 
@@ -187,6 +171,22 @@ Underground Cavern is east of Monolith Base. The description is "Cavern is so la
 
 scale model is a scenery in the Underground Cavern. The description is "The scale model seems to represent portion of the earth. There are large temple like structures that you don't recognize at all and one of them is located directly where the dig site is."
 
+Section - Regions
+
+Start Area is a region. The Tent is in Start Area.
+
+Dig Area is a region. Camp Site, Dig Site, The Monolith and Old Temple are in Dig Area. 
+
+Underground Temple Area is a region. The Underground Machinery, the Underground Room, Storage Room, the Underground Monolith, Monolith Base and Underground Cavern are in Underground Temple Area.
+
+Section - Backdrops
+
+The sky is a backdrop. The description is "the sky is completely cloudless." The sky is in the Dig Area.
+
+The ground is a backdrop. The description is "Ground is dry and dusty." The ground is in the Dig Area.
+
+The jungle is backdrop. The description is "Thick jungle surrounds the dig site from all directions. You wouldn't want to wander in there and get lost." The jungle is in the Dig Area.
+
 Section - Items
 
 theodolite is in the Monolith. The description is "complex looking theodolite is standing on a tripod."  
@@ -287,16 +287,6 @@ Instead of quizzing Montana about the scale model during exploring cavern:
 
 Chapter - At the Museum
 
-Section - Regions
-
-Museum Area is a region. Study and Grand Hall are in Museum Area.
-
-Jungle Area is a region. Jungle Road, Jungle Path, Riverbank, Waterfall, Waterfall Basin are in Jungle Area.
-
-Jungle Cave Area is region. Behind the Waterfall, Large Cave, Winding Stairs, Dusty Lair are in Jungle Cave Area.
-
-Section - Backdrops
-
 Section - Actions
 
 Instead of examining the old map:
@@ -305,7 +295,7 @@ Instead of examining the old map:
 	otherwise:
 		let way be the best route from the location of the player to the destination of the noun;
 		if the way is not a direction:
-			say "[the description of the noun]";
+			say "[the description of the noun] Based on the map, you wouldn't know which direction to go.";
 		otherwise:
 			say "[the description of the noun] The map indicates that the correct direction to travel is [way]".
 
@@ -352,14 +342,16 @@ Instead of cutting vines:
 	otherwise:
 		say "you lack proper tools."
 
-Jungle Path is northeast of Jungle Road. The description is "A small path leads through the jungle, but this seems to be as far as you can get."
+Jungle Path is northeast of Jungle Road. The description is "A small path leads through the jungle."
 
-vines_2 are scenery in Jungle Path. The printed name is "vines". The description is "thick wall of vines block your movement."
+Bend in Path is north of Jungle Path. The description is "The path starts to curve towards east."
+
+vines_2 are scenery in Bend in Path. The printed name is "vines". The description is "thick wall of vines block your movement."
 
 understand "vines" as vines_2.
 
-Before going north in Jungle Path:
-	if vines_2 are in Jungle Path:
+Before going north in Bend in Path:
+	if vines_2 are in Bend in Path:
 		say "thick vines block your path.";
 		stop the action.
 
@@ -370,7 +362,11 @@ Instead of cutting vines_2:
 	otherwise:
 		say "you lack proper tools."
 
-Riverbank is north of Jungle Path. The description is "A large stream cuts through the jungle."
+Narrow Path is east of Bend in Path. The description is "Narrow path leads through the jungle."
+
+Clearing in Jungle is northeast of Narrow Path. The description is "Small clearing in jungle."
+
+Riverbank is north of Bend in Path. The description is "A large stream cuts through the jungle."
 
 vines_3 are scenery in Riverbank. The printed name is "vines". The description is "thick wall of vines block your movement."
 
@@ -404,9 +400,19 @@ Dusty Lair is down from Winding Stairs. The description is "The lair is silent a
 
 [ TODO: invisible shambler here ]
 
+Section - Regions
+
+Museum Area is a region. Study and Grand Hall are in Museum Area.
+
+Jungle Area is a region. Jungle Road, Jungle Path, Bend in Path, Narrow Path, Clearing in Jungle, Riverbank, Waterfall, Waterfall Basin are in Jungle Area.
+
+Jungle Cave Area is region. Behind the Waterfall, Large Cave, Winding Stairs, Dusty Lair are in Jungle Cave Area.
+
+Section - Backdrops
+
 Section - Items
 
-the old map is a mapping item. The description is "large map shows detailed view of the region." The destination of the old map is Waterfall Basin.
+the old map is a mapping item. The description is "This large map has been marked with locations of all known temples." The destination of the old map is Waterfall Basin.
 
 Section - Scenes
 
