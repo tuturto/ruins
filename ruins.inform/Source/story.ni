@@ -183,11 +183,11 @@ Underground Temple Area is a region. The Underground Machinery, the Underground 
 
 Section - Backdrops
 
-The sky is a backdrop. The description is "the sky is completely cloudless." The sky is in the Dig Area.
+The sky is a backdrop in the Dig Area. The description is "the sky is completely cloudless."
 
-The ground is a backdrop. The description is "Ground is dry and dusty." The ground is in the Dig Area.
+The ground is a backdrop in the Dig Area. The description is "Ground is dry and dusty."
 
-The jungle is backdrop. The description is "Thick jungle surrounds the dig site from all directions. You wouldn't want to wander in there and get lost." The jungle is in the Dig Area.
+The jungle is backdrop in the Dig Area. The description is "Thick jungle surrounds the dig site from all directions. You wouldn't want to wander in there and get lost."
 
 Section - Items
 
@@ -320,7 +320,7 @@ instead of entering car during jungle adventure:
 
 understand "taxi" as car.
 
-Jungle Road is a room. The description is "This is end of the road and closest to the suspected location of the temple that you can get with car."
+Jungle Road is a room. The description is "This is end of the road and closest to the suspected location of the temple that you can get with car. The jungle surrounds you, forming an impenetrable looking wall." The journal entry is "A hidden path leads through green forest and takes the weary traveler to stream of kings." 
 
 the jeep_2 is enterable scenery container in the Jungle Road. The printed name is "jeep". The description is "this old jeep has seen better days, but it seems to be in driveable condition still."
 
@@ -368,7 +368,7 @@ Narrow Path is east of Bend in Path. The description is "Narrow path leads throu
 
 Clearing in Jungle is northeast of Narrow Path. The description is "Small clearing in jungle."
 
-Riverbank is north of Bend in Path. The description is "A large stream cuts through the jungle."
+Riverbank is north of Bend in Path. The description is "A large stream cuts through the jungle and forms an obstacle that you can't pass without boats. A small path cut through the jungle lies at south." The journal entry is "The stream of the kings can carry long boats swiftly. But only true king knows how far to travel, unless he wants to face his peril."
 
 vines_3 are scenery in Riverbank. The printed name is "vines". The description is "thick wall of vines block your movement."
 
@@ -386,9 +386,12 @@ Instead of cutting vines_3:
 	otherwise:
 		say "you lack proper tools."
 
-Waterfall is west of Riverbank. The description is "The river plummets down here, forming a large waterfall."
+Waterfall is west of Riverbank. The description is "The river plummets down here, forming a large waterfall. The view is spectacular and you can see over huge trees of the jungle. The air is moist with the water mist. Small path has been cut through the jungle at west."
 
 Tree is scenery in Waterfall. The description is "Large tree is standing here."
+
+Instead of quizzing Montana about the tree:
+	say "'We might be able to descent the cliff, if you tie a rope on that tree.'"
 
 Instead of tying rope to the Tree:
 	say "that should do it.";
@@ -400,6 +403,11 @@ Before going down in Waterfall:
 	otherwise:
 		say "Rocks are slippery from the water mist and descent is difficult. Half-way down your foot slips and you plummet into your death.";
 		end the story saying "Your adventure has ended."
+
+Waterfall_scenery is scenery in Waterfall. The printed name is "waterfall". The description is "A large waterfall plummets roaring down to the jungle."
+
+Instead of quizzing Montana about the waterfall_scenery:
+	say "'Truly spectacular waterfall, but lets stay focused on the task.'"
 
 Waterfall Basin is down of Waterfall. The description is "Roar of the waterfall is deafening down here."
 
@@ -427,6 +435,14 @@ Jungle Area is a region. Jungle Road, Jungle Path, Bend in Path, Narrow Path, Cl
 Jungle Cave Area is region. Behind the Waterfall, Large Cave, Winding Stairs, Dusty Lair are in Jungle Cave Area.
 
 Section - Backdrops
+
+the jungle_2 is a backdrop in Jungle Area. The printed name is "jungle". The description is "Thick trees tower all around you and mossy vines hang from them. The sunlight is blocked by thick vegetation. You hear usual jungle noise all around of you."  
+
+understand "jungle" as jungle_2.
+
+the sky_2 is a backdrop in Jungle Area. The printed name is "sky". The description is "While you can't see the sky very clearly, it seems to be blue and there are hardly any clouds up there."
+
+understand "sky" as sky_2.
 
 Section - Items
 
