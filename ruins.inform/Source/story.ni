@@ -47,13 +47,13 @@ Test me with "test retrieve-journal / test enter-temple / test repair-machine / 
 
 
 
-Montana is a woman. The description is "Montana Jacks is keenly observing her surroundings."
+Montana is a woman. The description is "Dr. Montana Jacks is renowned archaeologist, who spends more time on the field than in her study. She notices you looking a flashes a bright smile, with white teeth in a sharp contrast to her dark skin."
 
 Every turn when the destination of Montana is not the location of Montana and Montana is not off-stage and destination of Montana is not off-stage:
 	let the right direction be the best route from the location of Montana to the destination of Montana;
 		try Montana going the right direction.
 
-Bauer is a man. The description is "Bauer is peering around through his round spectacles."
+Bauer is a man. The description is "Dr. Samuelson Bauer is an old man with slightly hunched posture. His eyes behind the round spectacles are still very keen and bright."
 
 Every turn when the destination of Bauer is not the location of Bauer and Bauer is not off-stage:
 	let the right direction be the best route from the location of Bauer to the destination of Bauer;
