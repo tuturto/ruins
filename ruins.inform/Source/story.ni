@@ -386,6 +386,10 @@ Instead of cutting vines_3:
 
 Waterfall is west of Riverbank. The description is "The river plummets down here, forming a large waterfall."
 
+Before going down in Waterfall:
+	say "Rocks are slippery from the water mist and descent is difficult. Half-way down your foot slips and you plummet into your death.";
+	end the story saying "Your adventure has ended."
+
 Waterfall Basin is down of Waterfall. The description is "Roar of the waterfall is deafening down here."
 
 Behind the Waterfall is east of Waterfall Basin. The description is "A small cave continues deeper towards east. At west the waterfall forms a solid wall of water."
@@ -431,6 +435,11 @@ When Two Archaeologists begins:
 	say "'I hope you did not have to wait for long. I was making arrangements with Dr. Jacks concerning to the next move. Car should be outside soon and it will take you to the airport. From there you and Dr. Jacks will take an airplane and fly to Zambia where the next temple is located.'[paragraph break]'Take this map with you. I have marked location of the temple on it. If you have any questions before you go, now is the time to ask them. As I said, the car will be outside soon, so you can leave when ever you feel ready.'"
 
 Jungle Adventure is a scene. Jungle Adventure begins when Bauer is in Study for the first time.
+
+Waterfall Descent is a scene. Waterfall Descent begins when Montana is in Waterfall for the first time. Waterfall Descent ends when Montana is in Waterfall Basin for the first time.
+
+When Waterfall Descent begins:
+	say "Montana looks down from the edge of the cliff. 'This looks like a dangerous descent, we should use some tools unless we want to fall all the way down.'"
 
 Section - Characters
 
