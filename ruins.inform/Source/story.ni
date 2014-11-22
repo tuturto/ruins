@@ -41,7 +41,9 @@ Test enter-jeep with "west / up / northeast / up / west / enter jeep"
 
 Test travel-waterfall with "take all / south / south / enter car / examine jeep / take all / examine map / northeast / cut vines / northeast / examine map / north / examine map / north / cut vines / north / examine map / west / cut vines / west"
 
-Test me with "test retrieve-journal / test enter-temple / test repair-machine / test enter-cavern / test enter-jeep / test travel-waterfall"
+Test scale-waterfall with "tie rope to tree / down"
+
+Test me with "test retrieve-journal / test enter-temple / test repair-machine / test enter-cavern / test enter-jeep / test travel-waterfall / test scale-waterfall"
 
 
 
@@ -386,11 +388,23 @@ Instead of cutting vines_3:
 
 Waterfall is west of Riverbank. The description is "The river plummets down here, forming a large waterfall."
 
+Tree is scenery in Waterfall. The description is "Large tree is standing here."
+
+Instead of tying rope to the Tree:
+	say "that should do it.";
+	now the rope is part of the tree. 
+
 Before going down in Waterfall:
-	say "Rocks are slippery from the water mist and descent is difficult. Half-way down your foot slips and you plummet into your death.";
-	end the story saying "Your adventure has ended."
+	if rope is part of the tree:
+		say "You and Montana start descending down to waterfall basin using the rope. Couple times your foot slips, but you always manage to regain your balance.";	
+	otherwise:
+		say "Rocks are slippery from the water mist and descent is difficult. Half-way down your foot slips and you plummet into your death.";
+		end the story saying "Your adventure has ended."
 
 Waterfall Basin is down of Waterfall. The description is "Roar of the waterfall is deafening down here."
+
+Before going up in Waterfall Basin:
+	say "Scaling up the cliff would be impossible without the rope. Even with the rope it takes fair amount of time until you reach the top."
 
 Behind the Waterfall is east of Waterfall Basin. The description is "A small cave continues deeper towards east. At west the waterfall forms a solid wall of water."
 
