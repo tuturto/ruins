@@ -31,19 +31,19 @@ Book - Secret of the Ruins
 
 Test retrieve-journal with "take journal / south"
 
-Test enter-temple with "south / southwest / read journal / examine theodolite / northeast / northeast / read journal / push jaguar / down"
+Test enter-temple with "test retrieve-journal / south / southwest / read journal / examine theodolite / northeast / northeast / read journal / push jaguar / down"
 
-Test repair-machine with "north / read journal / pull lever / south / east / examine crates / search crates / take cog / search crates / west / north / attach cog to machine"
+Test repair-machine with "test enter-temple / north / read journal / pull lever / south / east / examine crates / search crates / take cog / search crates / west / north / attach cog to machine"
 
-Test enter-cavern with "pull lever / south / southwest / read journal / down / east / examine scale model"
+Test enter-cavern with "test repair-machine / pull lever / south / southwest / read journal / down / east / examine scale model"
 
-Test enter-jeep with "west / up / northeast / up / west / enter jeep"
+Test enter-jeep with "test enter-cavern / west / up / northeast / up / west / enter jeep"
 
-Test travel-waterfall with "take all / south / south / enter car / examine jeep / take all / examine map / northeast / cut vines / northeast / examine map / north / examine map / north / cut vines / north / examine map / west / cut vines / west"
+Test travel-waterfall with "test enter-jeep / take all / south / south / enter car / examine jeep / take all / examine map / northeast / cut vines / northeast / examine map / north / examine map / north / cut vines / north / examine map / west / cut vines / west"
 
-Test scale-waterfall with "tie rope to tree / down"
+Test scale-waterfall with "test travel-waterfall / tie rope to tree / down"
 
-Test me with "test retrieve-journal / test enter-temple / test repair-machine / test enter-cavern / test enter-jeep / test travel-waterfall / test scale-waterfall"
+Test me with "test scale-waterfall"
 
 
 
@@ -322,6 +322,11 @@ understand "taxi" as car.
 
 Jungle Road is a room. The description is "This is end of the road and closest to the suspected location of the temple that you can get with car. The jungle surrounds you, forming an impenetrable looking wall." The journal entry is "A hidden path leads through green forest and takes the weary traveler to stream of kings." 
 
+Path is scenery in Jungle Road. The description is "Despite for searching for a while, you can't find anything that would resemble a path."
+
+Instead of quizzing Montana about the Path:
+	say "'Sometimes you have to cut your own path.'"
+
 the jeep_2 is enterable scenery container in the Jungle Road. The printed name is "jeep". The description is "this old jeep has seen better days, but it seems to be in driveable condition still."
 
 machete is in jeep_2. The description is "the machete looks very sharp."
@@ -394,7 +399,7 @@ Instead of quizzing Montana about the tree:
 	say "'We might be able to descent the cliff, if you tie a rope on that tree.'"
 
 Instead of tying rope to the Tree:
-	say "that should do it.";
+	say "Montana double checks the rope and nods approvingly. 'That should do it. Lets go.'";
 	now the rope is part of the tree. 
 
 Before going down in Waterfall:
