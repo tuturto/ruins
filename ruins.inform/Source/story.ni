@@ -23,7 +23,7 @@ A person has a room called destination.
 
 a hidden item is a kind of thing. a hidden item can be found or not found. Hidden item is usually not found.
 
-a mapping item is a kind of thing. a mapping item has room called destination.
+a mapping item is a kind of thing. a mapping item has room called destination. a mapping item has region called mapped area.
 
 a room has some text called journal entry. the journal entry of a room is usually "".
 
@@ -41,7 +41,7 @@ Test enter-jeep with "test enter-cavern / west / up / northeast / up / west / en
 
 Test travel-waterfall with "test enter-jeep / take all / south / south / enter car / examine jeep / take all / examine map / northeast / cut vines / northeast / examine map / north / examine map / north / cut vines / north / examine map / west / cut vines / west"
 
-Test scale-waterfall with "test travel-waterfall / tie rope to tree / down"
+Test scale-waterfall with "test travel-waterfall / tie rope to tree / down / examine map"
 
 Test me with "test scale-waterfall"
 
@@ -74,6 +74,19 @@ Check reading:
 			say "you don't find anything suitable from the journal.";
 		otherwise:
 			say journal entry of t.  
+
+Instead of examining a mapping item:
+	if location of the player is the destination of the noun:
+		say "[the description of the noun] You have arrived at the location marked in [the noun].";
+	otherwise:
+		if location of the player is in mapped area of the noun:
+			let way be the best route from the location of the player to the destination of the noun;
+			if the way is not a direction:
+				say "[the description of the noun] Based on it, you wouldn't know which direction to go.";
+			otherwise:
+				say "[the description of the noun] It indicates that the correct direction to travel is [way]";
+		otherwise:
+			say "After consulting [the noun] for a while, you conclude that it doesn't have your current location on it.".
 
 Section - Rooms
 
@@ -291,16 +304,6 @@ Chapter - At the Museum
 
 Section - Actions
 
-Instead of examining the old map:
-	if location of the player is the destination of the noun:
-		say "[the description of the noun] You have arrived at the location marked in the map.";	
-	otherwise:
-		let way be the best route from the location of the player to the destination of the noun;
-		if the way is not a direction:
-			say "[the description of the noun] Based on the map, you wouldn't know which direction to go.";
-		otherwise:
-			say "[the description of the noun] The map indicates that the correct direction to travel is [way]".
-
 Section - Rooms
 
 Study is a room. The description is "Dr. Bauer's study is filled to the brim with books, scrolls and ancient items. There probably is a method in this chaos, but you fail to see it."
@@ -451,7 +454,7 @@ understand "sky" as sky_2.
 
 Section - Items
 
-the old map is a mapping item. The description is "This large map has been marked with locations of all known temples." The destination of the old map is Waterfall Basin.
+the old map is a mapping item. The description is "This large map has been marked with locations of all known temples." The destination of the old map is Waterfall Basin. The mapped area is Jungle Area.
 
 Section - Scenes
 
