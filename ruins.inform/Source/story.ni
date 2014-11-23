@@ -39,7 +39,7 @@ Test enter-cavern with "test repair-machine / pull lever / south / southwest / r
 
 Test enter-jeep with "test enter-cavern / west / up / northeast / up / switch off lantern / west / enter jeep"
 
-Test travel-waterfall with "test enter-jeep / take all / south / south / enter car / examine jeep / take all / examine map / northeast / cut vines / northeast / examine map / north / examine map / north / cut vines / north / examine map / west / cut vines / west"
+Test travel-waterfall with "test enter-jeep / take all / south / up / south / south / enter car / examine jeep / take all / examine map / northeast / cut vines / northeast / examine map / north / examine map / north / cut vines / north / examine map / west / cut vines / west"
 
 Test scale-waterfall with "test travel-waterfall / tie rope to tree / down / examine map"
 
@@ -330,11 +330,17 @@ Section - Actions
 
 Section - Rooms
 
-Study is a room. The description is "Dr. Bauer's study is filled to the brim with books, scrolls and ancient items. There probably is a method in this chaos, but you fail to see it."
+Bauer's Study is a room. The description is "Dr. Bauer's study is filled to the brim with books, scrolls and ancient items. There probably is a method in this chaos, but you fail to see it."
 
-the old map is in Study.
+the old map is in Bauer's Study.
 
-Grand Hall is south of the Study. The description is "The grand hall of the museum is large and full of polished marble."
+Montana's Study is east of Narrow Hallway. The description is "The study of Dr. Jacks has a neat and orderly collection of books on the walls. The desk is clean and free of any extra papers. Few masks are hanging from the walls."
+
+Your Study is west of Narrow Hallway. The description is "Your study is small and cramped. Walls are covered with couple bookshelves and a desk takes up rest of the space. On the desk, there are several piles of paper."
+
+Narrow Hallway is south of the Bauer's Study. The description is "This narrow hallway leads to most of the staff rooms. Narrow staircase leads up to ground level."
+
+Grand Hall is up from the Narrow Hallway. The description is "The grand hall of the museum is large and full of polished marble."
 
 Front of Museum is south of Grand Hall. The description is "Cars are passing by on a busy road. At north looms the very impressive looking museum."
 
@@ -420,13 +426,13 @@ Instead of cutting vines_3:
 
 Waterfall is west of Riverbank. The description is "The river plummets down here, forming a large waterfall. The view is spectacular and you can see over huge trees of the jungle. The air is moist with the water mist. Small path has been cut through the jungle at west."
 
-Tree is scenery in Waterfall. The description is "Large tree is standing here."
+Tree is scenery in Waterfall. The description is "Large tree is standing here. It looks like perfect for fixing a rope."
 
 Instead of quizzing Montana about the tree:
-	say "'We might be able to descent the cliff, if you tie a rope on that tree.'"
+	say "'We might be able to descent the cliff, if you tie a rope on that tree. I'll fix edge of the cliff, so it doesn't get to the rope.'"
 
 Instead of tying rope to the Tree:
-	say "Montana double checks the rope and nods approvingly. 'That should do it. Lets go.'";
+	say "Montana double checks the rope and nods approvingly before kicking the other end down the cliff. 'That should do it. Lets go.'";
 	now the rope is part of the tree. 
 
 Before going down in Waterfall:
@@ -460,7 +466,7 @@ Dusty Lair is down from Winding Stairs. It is dark. The description is "The lair
 
 Section - Regions
 
-Museum Area is a region. Study and Grand Hall are in Museum Area.
+Museum Area is a region. Bauer's Study, Montana's Study, Your Study, Narrow Hallway and Grand Hall are in Museum Area.
 
 Jungle Area is a region. Jungle Road, Jungle Path, Bend in Path, Narrow Path, Clearing in Jungle, Riverbank, Waterfall, Waterfall Basin are in Jungle Area.
 
@@ -485,10 +491,10 @@ Section - Scenes
 Meeting in Study is a scene. Meeting in Study begins when the Player is in Study for the first time. Meeting in Study ends when Two Archaeologists begins.
 
 When Meeting in Study begins:
-	now Bauer is in Grand Hall;
-	now destination of Bauer is Study;
-	now Montana is in Grand Hall;
-	now destination of Montana is Study;
+	now Bauer is in Narrow Hallway;
+	now destination of Bauer is Bauer's Study;
+	now Montana is in Narrow Hallway;
+	now destination of Montana is Bauer's Study;
 	remove lantern_2 from play;
 	remove lantern_3 from play.
 
