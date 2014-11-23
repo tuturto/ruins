@@ -450,11 +450,11 @@ Behind the Waterfall is east of Waterfall Basin. The description is "A small cav
 
 [ TODO: put a fancy trap here ] 
 
-Large Cave is east of Behind the Waterfall. The description is "Roar of the waterfall is quieter here, but you can still hear it coming from west. Four braziers stand in corners of the cavern."
+Large Cave is east of Behind the Waterfall. It is dark. The description is "Roar of the waterfall is quieter here, but you can still hear it coming from west. Four braziers stand in corners of the cavern."
 
-Winding Stairs is down from Large Cave. Description is "Winding stairs lead deeper underground."
+Winding Stairs is down from Large Cave. It is dark. Description is "Winding stairs lead deeper underground."
 
-Dusty Lair is down from Winding Stairs. The description is "The lair is silent and dust covers the ground. Nobody probably has been here in centuries."
+Dusty Lair is down from Winding Stairs. It is dark. The description is "The lair is silent and dust covers the ground. Nobody probably has been here in centuries."
 
 [ TODO: invisible shambler here ]
 
