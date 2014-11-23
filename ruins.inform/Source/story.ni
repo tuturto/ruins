@@ -49,11 +49,15 @@ Test me with "test scale-waterfall"
 
 Montana is a woman. The description is "Dr. Montana Jacks is renowned archaeologist, who spends more time on the field than in her study. She notices you looking a flashes a bright smile, with white teeth in a sharp contrast to her dark skin."
 
+Montana is carrying Lantern_2. The printed name of Lantern_2 is "lantern_2". The description of Lantern_2 is "Standard battery powered lantern." Lantern_2 is lit. 
+
 Every turn when the destination of Montana is not the location of Montana and Montana is not off-stage and destination of Montana is not off-stage:
 	let the right direction be the best route from the location of Montana to the destination of Montana;
 		try Montana going the right direction.
 
 Bauer is a man. The description is "Dr. Samuelson Bauer is an old man with slightly hunched posture. His eyes behind the round spectacles are still very keen and bright."
+
+Bauer is carrying Lantern_3. The printed name of Lantern_3 is "lantern_3". The description of Lantern_3 is "Standard battery powered lantern." Lantern_3 is lit.
 
 Every turn when the destination of Bauer is not the location of Bauer and Bauer is not off-stage:
 	let the right direction be the best route from the location of Bauer to the destination of Bauer;
@@ -88,11 +92,21 @@ Instead of examining a mapping item:
 		otherwise:
 			say "After consulting [the noun] for a while, you conclude that it doesn't have your current location on it.".
 
+Instead of switching on the lantern:
+	now the lantern is lit;
+	say "you light the lantern."
+
+Instead of switching off the lantern:
+	now the lantern is not lit;
+	say "you turn off the lantern."
+
 Section - Rooms
 
 The Tent is a room. The description is "Medium sized tent is filled with chairs, tables and all sorts of scientific papers and journals. Opening at the south leads outside."
 
 the old journal is in the tent. The description is "This old journal is full of cryptic writings of late Mr. Johansson. Most scholars disregard it as a hoax, but maybe there's something in it still."
+
+the lantern is in the tent. The description is "This old battery powered lantern can be switched on to provide light."
 
 Camp Site is south of the Tent. The description is "Camp site has several tents scattered around. Cooking area has been set in the middle of them and to north is entrance to the main tent. Main dig site can be seen at south, while an old temple is located to east from here. An old jeep is standing near by".
 
@@ -131,9 +145,9 @@ the monolith_scenery is scenery in the Monolith. The description is "Ancient mon
 
 understand "monolith" as monolith_scenery.
 
-Underground Room is a room. The description is "Light shines to room from the opening in the roof. Stairs made of heavy stone lead back up to the temple."
+Underground Room is a dark room. The description is "Light shines to room from the opening in the roof. Stairs made of heavy stone lead back up to the temple."
 
-Storage Room is east of Underground Room. The description is "Small storage room is packaged full with crates."
+Storage Room is east of Underground Room. It is dark. The description is "Small storage room is packaged full with crates."
 
 crates are scenery in the Storage Room. The description is "crates of various sizes lie about."
 
@@ -145,9 +159,9 @@ Instead of searching crates:
 	otherwise:
 		say "Rest of the boxes contain only uninteresting things."
 
-The Underground Monolith is southwest of the Underground Room. The description is "Large stone block pierces this room from ceiling to floor. It is covered with the same markings as the monolith above the ground." The journal entry is "'While the world pillar stands above the ground, but it has roots that reach deep underground. Only the invisible hands can open the gate for you.'"
+The Underground Monolith is southwest of the Underground Room. It is dark. The description is "Large stone block pierces this room from ceiling to floor. It is covered with the same markings as the monolith above the ground." The journal entry is "'While the world pillar stands above the ground, but it has roots that reach deep underground. Only the invisible hands can open the gate for you.'"
 
-The Underground Machinery is north of the Underground Room. The description is "Medium sized room is packed full of cogs, pulleys, pipes and levers." The journal entry is "'Invisible hands are commanded by the mechanical minds.'"
+The Underground Machinery is north of the Underground Room. It is dark. The description is "Medium sized room is packed full of cogs, pulleys, pipes and levers." The journal entry is "'Invisible hands are commanded by the mechanical minds.'"
 
 The Cogs are scenery in the Underground Machinery. The description is "Cogs made of black stone are part of an intricate machine. It seems to one of them is missing."
 
@@ -176,13 +190,13 @@ The Machine is in the Underground Machinery. The machine can be repaired or not 
 Instead of taking the Machine:
 	say "it's very large, complex and attached to the walls and floor. Better leave it where it is now."
 
-Monolith Base is a room. The description is "Base of the monolith is enormous and fills most of the room."
+Monolith Base is a dark room. The description is "Base of the monolith is enormous and fills most of the room."
 
 monolith_base is scenery in the Monolith Base. The description is "at this depth the monolith is enormous. It is covered with the same markings as the upper levels."
 
 Understand "monolith" as monolith_base.
 
-Underground Cavern is east of Monolith Base. The description is "Cavern is so large that the light doesn't reach all the corners or ceiling. The floor is covered by a scale model of some sort." The journal entry is "'Know location of one of the temples, and you'll know location of all the temples.'"
+Underground Cavern is east of Monolith Base. It is dark. The description is "Cavern is so large that the light doesn't reach all the corners or ceiling. The floor is covered by a scale model of some sort." The journal entry is "'Know location of one of the temples, and you'll know location of all the temples.'"
 
 scale model is a scenery in the Underground Cavern. The description is "The scale model seems to represent portion of the earth. There are large temple like structures that you don't recognize at all and one of them is located directly where the dig site is."
 
@@ -417,12 +431,12 @@ Waterfall_scenery is scenery in Waterfall. The printed name is "waterfall". The 
 Instead of quizzing Montana about the waterfall_scenery:
 	say "'Truly spectacular waterfall, but lets stay focused on the task.'"
 
-Waterfall Basin is down of Waterfall. The description is "Roar of the waterfall is deafening down here."
+Waterfall Basin is down of Waterfall. The description is "Roar of the waterfall is deafening down here. The water is churning around the small ledge you're standing on and every surface is slippery. The waterfall is like solid wall on the east." The journal entry is "The disciple has to prove that he's worthy of following the kings and travel through the elemental gate."
 
 Before going up in Waterfall Basin:
 	say "Scaling up the cliff would be impossible without the rope. Even with the rope it takes fair amount of time until you reach the top."
 
-Behind the Waterfall is east of Waterfall Basin. The description is "A small cave continues deeper towards east. At west the waterfall forms a solid wall of water."
+Behind the Waterfall is east of Waterfall Basin. The description is "A small cave continues deeper towards east. At west the waterfall forms a solid wall of water. Walls and floor are slippery from the water mist."
 
 [ TODO: put a fancy trap here ] 
 
@@ -478,6 +492,9 @@ Waterfall Descent is a scene. Waterfall Descent begins when Montana is in Waterf
 
 When Waterfall Descent begins:
 	say "Montana looks down from the edge of the cliff. 'This looks like a dangerous descent, we should use some tools unless we want to fall all the way down.'"
+
+When Waterfall Descent ends:
+	say "Montana looks around and then back up. 'That wasn't too bad actually. It could have been a lot worse. Hopefully we don't have to haul anything heavy back up though.' She grins and then continues, 'but we'll worry about that if we find something heavy, right?'"
 
 Section - Characters
 
