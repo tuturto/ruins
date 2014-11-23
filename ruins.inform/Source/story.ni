@@ -64,6 +64,13 @@ Every turn when the destination of Bauer is not the location of Bauer and Bauer 
 	let the right direction be the best route from the location of Bauer to the destination of Bauer;
 			try Bauer going the right direction.
 
+After going:
+	if player has lantern and lantern is lit:
+		if location of player is not dark:
+			say "You decide to conserve the batteries and turn off the lantern";
+			now the lantern is unlit;
+	continue the action.
+
 Chapter - Prologue
 
 Section - Actions
@@ -481,7 +488,9 @@ When Meeting in Study begins:
 	now Bauer is in Grand Hall;
 	now destination of Bauer is Study;
 	now Montana is in Grand Hall;
-	now destination of Montana is Study.
+	now destination of Montana is Study;
+	remove lantern_2 from play;
+	remove lantern_3 from play.
 
 Two Archaeologists is a scene. Two Archaeologists begins when Bauer is in Study for the first time.
 
