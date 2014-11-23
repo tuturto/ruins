@@ -29,15 +29,15 @@ a room has some text called journal entry. the journal entry of a room is usuall
 
 Book - Secret of the Ruins
 
-Test retrieve-journal with "take journal / south"
+Test retrieve-journal with "take all / south"
 
-Test enter-temple with "test retrieve-journal / south / southwest / read journal / examine theodolite / northeast / northeast / read journal / push jaguar / down"
+Test enter-temple with "test retrieve-journal / south / southwest / read journal / examine theodolite / northeast / northeast / read journal / push jaguar / down / switch on lantern"
 
 Test repair-machine with "test enter-temple / north / read journal / pull lever / south / east / examine crates / search crates / take cog / search crates / west / north / attach cog to machine"
 
 Test enter-cavern with "test repair-machine / pull lever / south / southwest / read journal / down / east / examine scale model"
 
-Test enter-jeep with "test enter-cavern / west / up / northeast / up / west / enter jeep"
+Test enter-jeep with "test enter-cavern / west / up / northeast / up / switch off lantern / west / enter jeep"
 
 Test travel-waterfall with "test enter-jeep / take all / south / south / enter car / examine jeep / take all / examine map / northeast / cut vines / northeast / examine map / north / examine map / north / cut vines / north / examine map / west / cut vines / west"
 
@@ -51,8 +51,9 @@ Montana is a woman. The description is "Dr. Montana Jacks is renowned archaeolog
 
 Montana is carrying Lantern_2. The printed name of Lantern_2 is "lantern_2". The description of Lantern_2 is "Standard battery powered lantern." Lantern_2 is lit. 
 
-Every turn when the destination of Montana is not the location of Montana and Montana is not off-stage and destination of Montana is not off-stage:
-	let the right direction be the best route from the location of Montana to the destination of Montana;
+Every turn during Epilogue:
+	if the destination of Montana is not the location of Montana and Montana is not off-stage:
+		let the right direction be the best route from the location of Montana to the destination of Montana;
 		try Montana going the right direction.
 
 Bauer is a man. The description is "Dr. Samuelson Bauer is an old man with slightly hunched posture. His eyes behind the round spectacles are still very keen and bright."
@@ -230,6 +231,8 @@ Before examining the theodolite:
 the rock cog is a thing. the rock cog is a hidden item. The description is "very finely carved rock cog."
 
 Section - Scenes
+
+Epilogue is a scene. Epilogue begins when the Exploring dig site begins. Epilogue ends when Exploring Cavern ends.
 
 Exploring dig site is a scene. Exploring dig site begins when the player is in the Camp Site for the first time. Exploring dig site ends when Exploring temple begins.
 
