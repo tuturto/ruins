@@ -432,7 +432,10 @@ Instead of quizzing Montana about the tree:
 	say "'We might be able to descent the cliff, if you tie a rope on that tree. I'll fix edge of the cliff, so it doesn't get to the rope.'"
 
 Instead of tying rope to the Tree:
-	say "Montana double checks the rope and nods approvingly before kicking the other end down the cliff. 'That should do it. Lets go.'";
+	if the Waterfall Basin is unvisited:
+		say "Montana double checks the rope and nods approvingly before kicking the other end down the cliff. 'That should do it. Lets go.'";
+	otherwise:
+		say "You tie the rope around the tree once again.";
 	now the rope is part of the tree. 
 
 Before going down in Waterfall:
@@ -441,6 +444,11 @@ Before going down in Waterfall:
 	otherwise:
 		say "Rocks are slippery from the water mist and descent is difficult. Half-way down your foot slips and you plummet into your death.";
 		end the story saying "Your adventure has ended."
+
+Before going east in Waterfall when Waterfall Basin is visited:
+	if rope is part of the tree:
+		say "You untie the rope and coil it to a neat loop. No sense leaving it behind after all.";
+		now the player has the rope.
 
 Waterfall_scenery is scenery in Waterfall. The printed name is "waterfall". The description is "A large waterfall plummets roaring down to the jungle."
 
