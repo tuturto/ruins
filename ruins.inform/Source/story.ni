@@ -43,7 +43,9 @@ Test travel-waterfall with "test enter-jeep / take all / south / up / south / so
 
 Test scale-waterfall with "test travel-waterfall / tie rope to tree / down / examine map"
 
-Test me with "test scale-waterfall"
+Test light-braziers with "test scale-waterfall / east / east / switch on lantern / light braziers"
+
+Test me with "test light-braziers"
 
 
 
@@ -464,9 +466,19 @@ Behind the Waterfall is east of Waterfall Basin. The description is "A small cav
 
 [ TODO: put a fancy trap here ] 
 
-Large Cave is east of Behind the Waterfall. It is dark. The description is "Roar of the waterfall is quieter here, but you can still hear it coming from west. Four braziers stand in corners of the cavern."
+Large Cave is east of Behind the Waterfall. It is dark. The description is "Roar of the waterfall is quieter here, but you can still hear it coming from west. Four braziers stand in corners of the cavern and a stone table is in the center of the cave."
 
-Winding Stairs is down from Large Cave. It is dark. Description is "Winding stairs lead deeper underground."
+braziers are scenery in Large Cave. The description is "four iron braziers are blackened by the fires that burned here ages ago."
+
+stone table is scenery in Large Cave. The description is "a large table has been fashioned from a single piece of stone."
+
+Instead of burning braziers when braziers are not lit:
+	say "As you light the braziers, the stone table moves aside, revealing a circular staircase.";
+	now braziers are lit;
+	change the down exit of the Large Cave to the Winding Stairs;
+	change the up exit of the Winding Stairs to the Large Cave.
+
+Winding Stairs is a dark room. Description is "Winding stairs lead deeper underground." 
 
 Dusty Lair is down from Winding Stairs. It is dark. The description is "The lair is silent and dust covers the ground. Nobody probably has been here in centuries."
 
