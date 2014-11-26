@@ -22,6 +22,11 @@ Disarming is an action applying to one thing. Understand "disarm [something]" as
 Check disarming:
 	say "After some consideration, you conclude that [the noun] does not need disarming."
 
+Combining is an action applying to one thing and one visible thing. Understand "combine [something] with [something]" as combining.
+
+Check combining:
+	say "You look [the noun] and [the second noun], then decide that they don't need combining."
+
 Section - New Kinds and Properties
 
 A person has a room called destination.
@@ -479,6 +484,13 @@ Instead of quizzing Montana about the thin thread:
 Instead of disarming the thin thread:
 	say "You look around carefully and find a tiny hole in wall that must be part of the trap. While making sure that you're out of the way, you trigger the trap and see as a small dart flies across the corridor. The trap is now harmless.";
 	remove the thin thread from play.
+
+Instead of cutting the thin thread:
+	if player has machete:
+		say "You unceremoniously cut the thin thread with your machete and the trap is now ineffective.";
+		remove the thin thread from play;	
+	otherwise:
+		say "You pat your pockets and realize that you're lacking tools to cut the thread."
 
 Before going east in Behind the Waterfall:
 	if thin thread is in Behind the Waterfall: 
