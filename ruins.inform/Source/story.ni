@@ -17,6 +17,11 @@ Check quizzing it about:
 Check informing it about:
 	say "[The noun] only barely listens your explanation."
 
+Disarming is an action applying to one thing. Understand "disarm [something]" as disarming.
+
+Check disarming:
+	say "After some consideration, you conclude that [the noun] does not need disarming."
+
 Section - New Kinds and Properties
 
 A person has a room called destination.
@@ -43,7 +48,7 @@ Test travel-waterfall with "test enter-jeep / take all / south / up / south / so
 
 Test scale-waterfall with "test travel-waterfall / tie rope to tree / down / examine map"
 
-Test light-braziers with "test scale-waterfall / east / east / switch on lantern / light braziers"
+Test light-braziers with "test scale-waterfall / east / examine floor / ask Montana about trap / disarm trap / east / switch on lantern / read journal / light braziers"
 
 Test me with "test light-braziers"
 
@@ -445,7 +450,7 @@ Before going down in Waterfall:
 		say "You and Montana start descending down to waterfall basin using the rope. Couple times your foot slips, but you always manage to regain your balance.";	
 	otherwise:
 		say "Rocks are slippery from the water mist and descent is difficult. Half-way down your foot slips and you plummet into your death.";
-		end the story saying "Your adventure has ended."
+		end the story finally saying "Your adventure has ended."
 
 Before going east in Waterfall when Waterfall Basin is visited:
 	if rope is part of the tree:
@@ -462,11 +467,25 @@ Waterfall Basin is down of Waterfall. The description is "Roar of the waterfall 
 Before going up in Waterfall Basin:
 	say "Scaling up the cliff would be impossible without the rope. Even with the rope it takes fair amount of time until you reach the top."
 
-Behind the Waterfall is east of Waterfall Basin. The description is "A small cave continues deeper towards east. At west the waterfall forms a solid wall of water. Walls and floor are slippery from the water mist."
+Behind the Waterfall is east of Waterfall Basin. The description is "A small cave continues deeper towards east. At west the waterfall forms a solid wall of water. Walls and floor are slippery from the water mist. You eye corridor suspiciously, something isn't right here."
 
-[ TODO: put a fancy trap here ] 
+thin thread is scenery in Behind the Waterfall. The description is "almost invisible thin thread runs across the corridor. No doubt, this is a trigger mechanism for a trap!"
 
-Large Cave is east of Behind the Waterfall. It is dark. The description is "Roar of the waterfall is quieter here, but you can still hear it coming from west. Four braziers stand in corners of the cavern and a stone table is in the center of the cave."
+understand "corridor", "floor", "trap" as thin thread.
+
+Instead of quizzing Montana about the thin thread:
+	say "'No doubt that has been set up to keep intruders away. Can you find a way to get past it?'"
+
+Instead of disarming the thin thread:
+	say "You look around carefully and find a tiny hole in wall that must be part of the trap. While making sure that you're out of the way, you trigger the trap and see as a small dart flies across the corridor. The trap is now harmless.";
+	remove the thin thread from play.
+
+Before going east in Behind the Waterfall:
+	if thin thread is in Behind the Waterfall: 
+		say "Your feet catches a thin thread that has been placed across the corridor. Before you can react, a small dart shoots at you and you feel cold numbness to spread from the wound.";
+		end the story finally saying "You have died".
+
+Large Cave is east of Behind the Waterfall. It is dark. The description is "Roar of the waterfall is quieter here, but you can still hear it coming from west. Four braziers stand in corners of the cavern and a stone table is in the center of the cave." The journal entry is "'The kings are guided by the righteous flames of dragons.'"
 
 braziers are scenery in Large Cave. The description is "four iron braziers are blackened by the fires that burned here ages ago."
 
