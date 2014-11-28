@@ -182,6 +182,10 @@ ground_ditch is scenery in the Raised Ground. The description is "a meter deep d
 
 understand "ditch" as ground_ditch.
 
+dig_site_raised_ground is scenery in the Raised Ground. The description is "From your vantage point you can see the whole dig site at north east. Excavations of various sizes dot the site and they have been neatly marked with coloured ropes. Beyond the dig site you can see the old temple, or rather what's still left of it."
+
+understand "dig site", "dig", "site" as dig_site_raised_ground.
+
 Instead of going south in the Raised Ground:
 	say "a ditch have been cut across here and you can't just walk over it."
 
