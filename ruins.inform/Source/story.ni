@@ -550,9 +550,51 @@ Dusty Lair is down from Winding Stairs. It is dark. The description is "The lair
 
 [ TODO: invisible shambler here ]
 
-Underground Passage is east from Dusty Lair. Underground Passage is dark. The description is "Underground passage."
+Underground Passage_1 is east from Dusty Lair. Underground Passage_1 is dark. The printed name is "Underground Passage". The description is "Corridors are extending to all directions."
 
-Secret Chamber is east from Underground Passage. The description is "A secret chamber."
+Underground Passage_1 is north of Underground Passage_1.
+Underground Passage_1 is northeast of Underground Passage_1.
+Underground Passage_1 is east of Underground Passage_1.
+Underground Passage_1 is southeast of Underground Passage_1.
+
+Underground Passage_2 is southwest from Underground Passage_1. Underground Passage_2 is dark. The printed name is "Underground Passage". The description is "Corridors are extending to all directions."
+
+Underground Passage_1 is north of Underground Passage_2.
+Underground Passage_1 is east of Underground Passage_2.
+Underground Passage_1 is southeast of Underground Passage_2.
+Underground Passage_1 is southwest of Underground Passage_2.
+Underground Passage_1 is west of Underground Passage_2.
+Underground Passage_1 is northwest of Underground Passage_2.
+
+Underground Passage_3 is south from Underground Passage_2. Underground Passage_3 is dark. The printed name is "Underground Passage". The description is "Corridors are extending to all directions."
+
+Underground Passage_1 is northeast of Underground Passage_3.
+Underground Passage_1 is east of Underground Passage_3.
+Underground Passage_1 is southeast of Underground Passage_3.
+Underground Passage_1 is south of Underground Passage_3.
+Underground Passage_1 is southwest of Underground Passage_3.
+Underground Passage_1 is northwest of Underground Passage_3.
+
+Underground Passage_4 is west from Underground Passage_3. Underground Passage_4 is dark. The printed name is "Underground Passage". The description is "Corridors are extending to all directions."
+
+Underground Passage_1 is north of Underground Passage_4.
+Underground Passage_1 is northeast of Underground Passage_4.
+Underground Passage_1 is south of Underground Passage_4.
+Underground Passage_1 is southwest of Underground Passage_4.
+Underground Passage_1 is west of Underground Passage_4.
+Underground Passage_1 is northwest of Underground Passage_4.
+
+Underground Passage_5 is southeast from Underground passage_4. Underground Passage_5 is dark. The printed name is "Underground Passage". The description is "Corridors are extending to all directions."
+
+Underground Passage_1 is north of Underground Passage_5.
+Underground Passage_1 is northeast of Underground Passage_5.
+Underground Passage_1 is southeast of Underground Passage_5.
+Underground Passage_1 is south of Underground Passage_5.
+Underground Passage_1 is southwest of Underground Passage_5.
+Underground Passage_1 is west of Underground Passage_5.
+
+Secret Chamber is east from Underground Passage_5. The description is "A secret chamber."
+
 
 Section - Regions
 
@@ -560,7 +602,7 @@ Museum Area is a region. Bauer's Study, Montana's Study, Your Study, Narrow Hall
 
 Jungle Area is a region. Jungle Road, Jungle Path, Bend in Path, Narrow Path, Clearing in Jungle, Riverbank, Waterfall, Waterfall Basin are in Jungle Area.
 
-Jungle Cave Area is region. Behind the Waterfall, Large Cave, Winding Stairs, Dusty Lair, Underground Passage, Secret Chamber are in Jungle Cave Area.
+Jungle Cave Area is region. Behind the Waterfall, Large Cave, Winding Stairs, Dusty Lair, Underground Passage_1, Underground Passage_2, Underground Passage_3, Underground Passage_4, Underground Passage_5, Secret Chamber are in Jungle Cave Area.
 
 Section - Backdrops
 
