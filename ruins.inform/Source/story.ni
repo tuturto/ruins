@@ -53,7 +53,7 @@ Test travel-waterfall with "test enter-jeep / take all / south / up / south / so
 
 Test scale-waterfall with "test travel-waterfall / tie rope to tree / down / examine map"
 
-Test light-braziers with "test scale-waterfall / east / examine floor / ask Montana about trap / disarm trap / east / switch on lantern / read journal / light braziers"
+Test light-braziers with "test scale-waterfall / east / examine floor / ask Montana about trap / jump / switch on lantern / read journal / light braziers"
 
 Test me with "test light-braziers"
 
@@ -474,27 +474,29 @@ Before going up in Waterfall Basin:
 
 Behind the Waterfall is east of Waterfall Basin. The description is "A small cave continues deeper towards east. At west the waterfall forms a solid wall of water. Walls and floor are slippery from the water mist. You eye corridor suspiciously, something isn't right here."
 
-thin thread is scenery in Behind the Waterfall. The description is "almost invisible thin thread runs across the corridor. No doubt, this is a trigger mechanism for a trap!"
+some bones are in Behind the Waterfall. The initial appearance is "scattered bones are laying on the floor". The description is "old, fractured bones".
 
-understand "corridor", "floor", "trap" as thin thread.
+a raised stone is scenery in Behind the Waterfall. The description is "one of the stones on the floor is slightly raised. No doubt, this is a trigger mechanism for a trap!"
 
-Instead of quizzing Montana about the thin thread:
+understand "corridor", "floor", "trap" as raised stone.
+
+Instead of quizzing Montana about the raised stone:
 	say "'No doubt that has been set up to keep intruders away. Can you find a way to get past it?'"
 
-Instead of disarming the thin thread:
-	say "You look around carefully and find a tiny hole in wall that must be part of the trap. While making sure that you're out of the way, you trigger the trap and see as a small dart flies across the corridor. The trap is now harmless.";
-	remove the thin thread from play.
+Instead of disarming the raised stone:
+	say "After some inspection, you conclude that this trap can't be disarmed."
 
-Instead of cutting the thin thread:
-	if player has machete:
-		say "You unceremoniously cut the thin thread with your machete and the trap is now ineffective.";
-		remove the thin thread from play;	
-	otherwise:
-		say "You pat your pockets and realize that you're lacking tools to cut the thread."
+Instead of taking some bones when raised stone is in Behind the Waterfall:
+	say "You reach for the bones and hear a faint click as you step onto something. With a scraping noise a group of sharp spears descent from the roof and pierce you.";
+	end the story finally saying "You have died".
+
+Instead of jumping:
+	say "You deftly jump over the raised stone and continue deeper underground.";
+	now player is in Large Cave.
 
 Before going east in Behind the Waterfall:
-	if thin thread is in Behind the Waterfall: 
-		say "Your feet catches a thin thread that has been placed across the corridor. Before you can react, a small dart shoots at you and you feel cold numbness to spread from the wound.";
+	if the raised stone is in Behind the Waterfall: 
+		say "As you continue deeper underground, you step on a slightly raised stone. With a scraping noise a group of sharp spears descent from the roof and pierce you.";
 		end the story finally saying "You have died".
 
 Large Cave is east of Behind the Waterfall. It is dark. The description is "Roar of the waterfall is quieter here, but you can still hear it coming from west. Four braziers stand in corners of the cavern and a stone table is in the center of the cave." The journal entry is "'The kings are guided by the righteous flames of dragons.'"
