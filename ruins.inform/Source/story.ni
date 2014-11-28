@@ -159,11 +159,35 @@ Instead of pushing the jaguar:
 	change the down exit of the Old Temple to the Underground Room;
 	change the up exit of the Underground Room to the Old Temple.
 
-The Monolith is southwest of the Dig site. The description is "Ancient monolith stands on a stony clearing. Curious markings cover surface of it. At north east one can see the main dig site." The journal entry is "'Know this: standing at the base of the world pillar, and gazing at the direction given by the runes, you shall see where the key of underworld lies.'"
+The Monolith is southwest of the Dig site. The description is "Ancient monolith stands on a stony clearing. Curious markings cover surface of it. At north east one can see the main dig site. The ground rises a bit at north, where some sort of excavation ditch has been dug." The journal entry is "'Know this: standing at the base of the world pillar, and gazing at the direction given by the runes, you shall see where the key of underworld lies.'"
+
+monolith_ditch is scenery in the Monolith. The description is "a meter deep ditch have been cut here. Most likely it's part of the archaeological excavation. You probably could easily jump over it."
+
+understand "ditch" as monolith_ditch. 
 
 the monolith_scenery is scenery in the Monolith. The description is "Ancient monolith stands alone. Curious markings cover surface of it."
 
 understand "monolith" as monolith_scenery.
+
+Instead of going north in The Monolith:
+	say "a ditch have been cut across here and you can't just walk over it."
+
+Instead of jumping in the Monolith:
+	say "you deftly jump over the ditch.";
+	now player is in the Raised Ground.
+
+The Raised Ground is north of the Monolith. The description is "A small patch of ground is slightly higher up than the monolith at the south. You have an excellent view over the dig site from here."
+
+ground_ditch is scenery in the Raised Ground. The description is "a meter deep ditch have been cut here. Most likely it's part of the archaeological excavation."
+
+understand "ditch" as ground_ditch.
+
+Instead of going south in the Raised Ground:
+	say "a ditch have been cut across here and you can't just walk over it."
+
+Instead of jumping in the Raised Ground:
+	say "you deftly jump over the ditch.";
+	now player is in the Monolith.
 
 Underground Room is a dark room. The description is "Light shines to room from the opening in the roof. Stairs made of heavy stone lead back up to the temple."
 
@@ -224,7 +248,7 @@ Section - Regions
 
 Start Area is a region. The Tent is in Start Area.
 
-Dig Area is a region. Camp Site, Dig Site, The Monolith and Old Temple are in Dig Area. 
+Dig Area is a region. Camp Site, Dig Site, The Monolith, The Raised Ground and Old Temple are in Dig Area. 
 
 Underground Temple Area is a region. The Underground Machinery, the Underground Room, Storage Room, the Underground Monolith, Monolith Base and Underground Cavern are in Underground Temple Area.
 
@@ -232,7 +256,9 @@ Section - Backdrops
 
 The sky is a backdrop in the Dig Area. The description is "the sky is completely cloudless."
 
-The ground is a backdrop in the Dig Area. The description is "Ground is dry and dusty."
+The ground_bg is a backdrop in the Dig Area. The description is "Ground is dry and dusty."
+
+Understand "ground" as ground_bg.
 
 The jungle is backdrop in the Dig Area. The description is "Thick jungle surrounds the dig site from all directions. You wouldn't want to wander in there and get lost."
 
@@ -325,6 +351,9 @@ Instead of quizzing Montana about the jaguar carving during exploring dig site:
 
 Instead of quizzing Montana about the temple_scenery during exploring dig site:
 	say "'The theodolite is currently pointing towards that old temple. There is connection between the monolith and the temple, I'm sure about that.'"
+
+Instead of quizzing Montana about monolith_ditch during exploring dig site:
+	say "'That ditch is part of the excavation. We haven't found anything interesting in it yet though.'"
 
 Every turn when the player is in the Underground Monolith and Montana is in the Underground Monolith:
 	if a random chance of 1 in 3 succeeds:
