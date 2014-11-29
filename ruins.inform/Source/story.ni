@@ -378,6 +378,15 @@ Chapter - At the Museum
 
 Section - Actions
 
+Instead of dropping the red feather when player is in Jungle Maze Area:
+	let way be the best route from the location of the player to the Secret Chamber;
+	if the way is not a direction:
+		say "[the noun] falls on ground.";
+		now the noun is in location;
+	otherwise:
+		say "[the noun] falls on ground, while drifting towards [way].";
+		now the noun is in location.
+
 Section - Rooms
 
 Bauer's Study is a room. The description is "Dr. Bauer's study is filled to the brim with books, scrolls and ancient items. There probably is a method in this chaos, but you fail to see it."
@@ -640,7 +649,9 @@ Museum Area is a region. Bauer's Study, Montana's Study, Your Study, Narrow Hall
 
 Jungle Area is a region. Jungle Road, Jungle Path, Bend in Path, Narrow Path, Clearing in Jungle, Riverbank, Waterfall, Waterfall Basin are in Jungle Area.
 
-Jungle Cave Area is region. Behind the Waterfall, Large Cave, Winding Stairs, Dusty Lair, Underground Passage_1, Underground Passage_2, Underground Passage_3, Underground Passage_4, Underground Passage_5, Secret Chamber are in Jungle Cave Area.
+Jungle Cave Area is region. Behind the Waterfall, Large Cave, Winding Stairs, Dusty Lair, Secret Chamber are in Jungle Cave Area.
+
+Jungle Maze Area is region. Underground Passage_1, Underground Passage_2, Underground Passage_3, Underground Passage_4, Underground Passage_5 are in Jungle Maze Area.   
 
 Section - Backdrops
 
@@ -685,6 +696,12 @@ When Waterfall Descent begins:
 
 When Waterfall Descent ends:
 	say "Montana looks around and then back up. 'That wasn't too bad actually. It could have been a lot worse. Hopefully we don't have to haul anything heavy back up though.' She grins and then continues, 'but we'll worry about that if we find something heavy, right?'"
+
+Solving Maze is a scene. Solving Maze begins when player is in Underground Passage_1 for the first time. Solving Maze ends when Montana is in Secret Chamber for the first time.
+
+[TODO: modify passage descriptions]
+When Solving Maze ends:
+	say "Montana looks back to the maze and shakes her head, 'I'm glad it's over now. Luckily, in the future we can follow our footprints.'"
 
 Section - Characters
 
