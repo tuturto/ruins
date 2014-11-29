@@ -472,11 +472,13 @@ Before taking silver pendant in Clearing in Jungle:
 Instead of throwing machete at the colourful bird:
 	say "You chuck the machete at the bird and scare it away.";
 	remove colourful bird from play;
+	now the red feather is in Clearing in Jungle;
 	now machete is in Clearing in Jungle.
 
 Instead of throwing smooth stone at the colourful bird:
 	say "You chuck the stone at the bird and scare it away.";
 	remove colourful bird from play;
+	now the red feather is in Clearing in Jungle;
 	now smooth stone is in Clearing in Jungle.
 
 Instead of throwing lantern at the colourful bird:
@@ -653,6 +655,8 @@ understand "sky" as sky_2.
 Section - Items
 
 the old map is a mapping item. The description is "This large map has been marked with locations of all known temples." The destination of the old map is Waterfall Basin. The mapped area is Jungle Area.
+
+the red feather is a thing. The description is "a bright red, large feather"
 
 Section - Scenes
 
