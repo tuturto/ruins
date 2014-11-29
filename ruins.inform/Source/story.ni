@@ -52,7 +52,9 @@ Test enter-cavern with "test repair-machine / pull lever / south / southwest / r
 
 Test enter-jeep with "test enter-cavern / west / up / northeast / up / switch off lantern / west / enter jeep"
 
-Test travel-waterfall with "test enter-jeep / take all / south / up / south / south / enter car / examine jeep / take all / examine map / northeast / cut vines / northeast / examine map / north / examine map / north / cut vines / north / examine map / west / cut vines / west"
+Test obtain-pendant with "test enter-jeep / take all / south / up / south / south / enter car / examine jeep / take all / examine map / northeast / cut vines / northeast / examine map / north / east / northeast / take silvery / throw machete at bird / take all"
+
+Test travel-waterfall with "test obtain-pendant / southwest / west / examine map / north / cut vines / north / take all / examine map / west / cut vines / west"
 
 Test scale-waterfall with "test travel-waterfall / tie rope to tree / down / examine map"
 
@@ -454,7 +456,38 @@ Narrow Path is east of Bend in Path. The description is "Narrow path leads throu
 
 Clearing in Jungle is northeast of Narrow Path. The description is "Small clearing in jungle."
 
+colourful bird is animal. colourful bird is in Clearing in Jungle.
+
+nest is scenery in Clearing in Jungle. The description is "A large bird's nest has been built on ground. [if colourful bird is in Clearing in Jungle]It is currently occupied by a really angry looking bird[otherwise]The owner of the nest is nowhere to be seen[end if]."
+
+silver pendant is in Clearing in Jungle. The initial appearance is "something silvery is lying in the bird's nest." The description is "An old silver pendant has been decorated with red and green stones."
+
+understand "silvery" as silver pendant.
+
+Before taking silver pendant in Clearing in Jungle:
+	if the colourful bird is in Clearing in Jungle:
+		say "As you approach the nest, the bird gets up and starts screeching and flapping. You decide that it's better to retreat.";
+		Stop the action.
+
+Instead of throwing machete at the colourful bird:
+	say "You chuck the machete at the bird and scare it away.";
+	remove colourful bird from play;
+	now machete is in Clearing in Jungle.
+
+Instead of throwing smooth stone at the colourful bird:
+	say "You chuck the stone at the bird and scare it away.";
+	remove colourful bird from play;
+	now smooth stone is in Clearing in Jungle.
+
+Instead of throwing lantern at the colourful bird:
+	say "You are worried that the lantern would break. Maybe something more suitable projectile can be obtained?"
+
+Instead of throwing journal at the colourful bird:
+	say "The journal is too precious to be thrown around!"
+
 Riverbank is north of Bend in Path. The description is "A large stream cuts through the jungle and forms an obstacle that you can't pass without boats. A small path cut through the jungle lies at south." The journal entry is "The stream of the kings can carry long boats swiftly. But only true king knows how far to travel, unless he wants to face his peril."
+
+smooth stone is in Riverbank. The initial appearance is "a smooth stone is lying here, half buried in mud." The description is "the stone is round and smooth."
 
 vines_3 are scenery in Riverbank. The printed name is "vines". The description is "thick wall of vines block your movement."
 
