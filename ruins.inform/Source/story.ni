@@ -1,5 +1,8 @@
 "Secret of the Ruins" by "Tuukka Turto"
 
+Release along with the source text.
+Release along with the library card.
+
 When play begins:
 	say "Not too long ago, ancient ruins were discovered in the Amazon Jungle. You have traveled there as a part of group of archaeologists, who plan to excavate the ruins and discover what secrets they hold.".
 
@@ -161,7 +164,7 @@ Instead of pushing the jaguar:
 
 The Monolith is southwest of the Dig site. The description is "Ancient monolith stands on a stony clearing. Curious markings cover surface of it. At north east one can see the main dig site. The ground rises a bit at north, where some sort of excavation ditch has been dug." The journal entry is "'Know this: standing at the base of the world pillar, and gazing at the direction given by the runes, you shall see where the key of underworld lies.'"
 
-monolith_ditch is scenery in the Monolith. The description is "a meter deep ditch have been cut here. Most likely it's part of the archaeological excavation. You probably could easily jump over it."
+monolith_ditch is scenery in the Monolith. The description is "a meter deep ditch have been cut here. Most likely it's part of the archaeological excavation. You probably could easily jump over it." Printed name is "ditch".
 
 understand "ditch" as monolith_ditch. 
 
