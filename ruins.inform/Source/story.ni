@@ -456,7 +456,7 @@ Narrow Path is east of Bend in Path. The description is "Narrow path leads throu
 
 Clearing in Jungle is northeast of Narrow Path. The description is "Small clearing in jungle."
 
-colourful bird is animal. colourful bird is in Clearing in Jungle.
+colourful bird is animal. The description is "The large bird is very garish and has all kinds of colours on its feathers. It's also very angry looking.". Colourful bird is in Clearing in Jungle.
 
 nest is scenery in Clearing in Jungle. The description is "A large bird's nest has been built on ground. [if colourful bird is in Clearing in Jungle]It is currently occupied by a really angry looking bird[otherwise]The owner of the nest is nowhere to be seen[end if]."
 
