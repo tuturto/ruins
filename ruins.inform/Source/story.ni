@@ -531,6 +531,10 @@ Instead of tying rope to the Tree:
 	now the rope is part of the tree. 
 
 Before going down in Waterfall:
+	if Waterfall Basin has been visited:
+		if rope is not part of the tree:
+			say "You tie the rope around the tree once again before descending.";
+			now the rope is part of the tree;
 	if rope is part of the tree:
 		say "You and Montana start descending down to waterfall basin using the rope. Couple times your foot slips, but you always manage to regain your balance.";	
 	otherwise:
