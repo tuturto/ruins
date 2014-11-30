@@ -600,7 +600,27 @@ Instead of burning braziers when braziers are not lit:
 	change the down exit of the Large Cave to the Winding Stairs;
 	change the up exit of the Winding Stairs to the Large Cave.
 
-Chapel Room is north of Large Cave. It is dark. The description is "Chapel room. Large cave south, smaller entrances east and west."
+Chapel Room is north of Large Cave. It is dark. The description is "Chapel room. Large cave south, smaller entrances east and west. Grate blocking way to north. Floor decorated with symbols."
+
+grate is scenery in Chapel Room. The description is "Heavy iron grate is blocking the way between Chapel Room and Altar Room."
+
+some symbols are scenery in Chapel Room. The description is "Floor is covered with strange symbols like you have never seen before."
+
+trident symbol is scenery in Chapel Room. The description is "This symbol looks like a trident with a wavy shaft."
+
+receptacle is a thing. It is fixed in place. The description is "a stone receptacle has a bowl like indentation in it and a small hole at the bottom of it."
+
+Instead of pushing trident when receptacle is off-stage:
+	say "Trident shaped symbol moves just the slightest and you hear low rumbling noise as a stone receptacle rises from the ground.";
+	now receptacle is in Chapel Room.
+
+Before going north in Chapel Room when grate is in Chapel Room:
+	say "The metal grate blocks the way.";
+	stop the action. 
+
+Before going south in Altar Room when grate is in Chapel Room:
+	say "The metal grate blocks the way.";
+	stop the action.
 
 Western Alcove is west of Chapel Room. It is dark. The description is "Small alcove with a brazier in it."
 
