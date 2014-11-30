@@ -600,6 +600,14 @@ Instead of burning braziers when braziers are not lit:
 	change the down exit of the Large Cave to the Winding Stairs;
 	change the up exit of the Winding Stairs to the Large Cave.
 
+Chapel Room is north of Large Cave. It is dark. The description is "Chapel room. Large cave south, smaller entrances east and west."
+
+Western Alcove is west of Chapel Room. It is dark. The description is "Small alcove with a brazier in it."
+
+Eastern Alcove is east of Chapel Room. It is dark. The description is "Small alcove with brazier in it."
+
+Altar Room is north of Chapel Room. It is dark. The description is "Large room with an altar."
+
 Winding Stairs is a dark room. Description is "Winding stairs lead deeper underground." 
 
 Dusty Lair is down from Winding Stairs. It is dark. The description is "The lair is silent and dust covers the ground. Nobody probably has been here in centuries."
@@ -667,7 +675,7 @@ Instead of following footprints_2:
 	now player is in Dusty Lair;
 	now Montana is in Underground Passage_1.
 
-Secret Chamber is east from Underground Passage_5. The description is "A secret chamber."
+Secret Chamber is east from Underground Passage_5. It is dark. The description is "A secret chamber."
 
 
 Section - Regions
@@ -676,7 +684,7 @@ Museum Area is a region. Bauer's Study, Montana's Study, Your Study, Narrow Hall
 
 Jungle Area is a region. Jungle Road, Jungle Path, Bend in Path, Narrow Path, Clearing in Jungle, Riverbank, Waterfall, Waterfall Basin are in Jungle Area.
 
-Jungle Cave Area is region. Behind the Waterfall, Large Cave, Winding Stairs, Dusty Lair, Secret Chamber are in Jungle Cave Area.
+Jungle Cave Area is region. Behind the Waterfall, Large Cave, Chapel Room, Western Alcove, Eastern Alcove, Altar Room, Winding Stairs, Dusty Lair, Secret Chamber are in Jungle Cave Area.
 
 Jungle Maze Area is region. Underground Passage_1, Underground Passage_2, Underground Passage_3, Underground Passage_4, Underground Passage_5 are in Jungle Maze Area.   
 
