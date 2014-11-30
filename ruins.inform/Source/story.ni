@@ -608,11 +608,14 @@ some symbols are scenery in Chapel Room. The description is "Floor is covered wi
 
 trident symbol is scenery in Chapel Room. The description is "This symbol looks like a trident with a wavy shaft."
 
-receptacle is a thing. It is fixed in place. The description is "a stone receptacle has a bowl like indentation in it and a small hole at the bottom of it."
+receptacle is a container. It is fixed in place. The description is "a stone receptacle has a bowl like indentation in it and a small hole at the bottom of it."
 
-Instead of pushing trident when receptacle is off-stage:
-	say "Trident shaped symbol moves just the slightest and you hear low rumbling noise as a stone receptacle rises from the ground.";
-	now receptacle is in Chapel Room.
+Instead of pushing trident:
+	if receptacle is off-stage:
+		say "Trident shaped symbol moves just the slightest and you hear low rumbling noise as a stone receptacle rises from the ground.";
+		now receptacle is in Chapel Room;
+	otherwise:
+		say "Trident shaped symbol doesn't budge."
 
 Before going north in Chapel Room when grate is in Chapel Room:
 	say "The metal grate blocks the way.";
