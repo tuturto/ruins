@@ -30,6 +30,11 @@ Combining is an action applying to one thing and one visible thing. Understand "
 Check combining:
 	say "You look [the noun] and [the second noun], then decide that they don't need combining."
 
+Following is an action applying to one thing. Understand "follow [something]" as following.
+
+Check following:
+	say "You look at [the noun] and decide to travel your own paths instead."
+
 Section - New Kinds and Properties
 
 A person has a room called destination.
@@ -603,6 +608,15 @@ Dusty Lair is down from Winding Stairs. It is dark. The description is "The lair
 
 Underground Passage_1 is east from Dusty Lair. Underground Passage_1 is dark. The printed name is "Underground Passage". The description is "Corridors are extending to all directions."
 
+footprints_1 is scenery. The description is "You see pair of footprints in the dust. These should lead you to the secret chamber." The printed name is "footprints".
+
+Understand "footprints", "foot", "prints" as footprints_1.
+
+Instead of following footprints_1:
+	say "You follow the footprints through the maze.";
+	now player is in Secret Chamber;
+	now Montana is in Underground Passage_5.
+
 Underground Passage_1 is north of Underground Passage_1.
 Underground Passage_1 is northeast of Underground Passage_1.
 Underground Passage_1 is east of Underground Passage_1.
@@ -643,6 +657,15 @@ Underground Passage_1 is southeast of Underground Passage_5.
 Underground Passage_1 is south of Underground Passage_5.
 Underground Passage_1 is southwest of Underground Passage_5.
 Underground Passage_1 is west of Underground Passage_5.
+
+footprints_2 is scenery. The description is "You see pair of footprints in the dust. These should lead you through the maze." The printed name is "footprints".
+
+Understand "footprints", "foot", "prints" as footprints_2.
+
+Instead of following footprints_2:
+	say "You follow footprints through the maze.";
+	now player is in Dusty Lair;
+	now Montana is in Underground Passage_1.
 
 Secret Chamber is east from Underground Passage_5. The description is "A secret chamber."
 
@@ -705,7 +728,9 @@ Solving Maze is a scene. Solving Maze begins when player is in Underground Passa
 
 [TODO: modify passage descriptions]
 When Solving Maze ends:
-	say "Montana looks back to the maze and shakes her head, 'I'm glad it's over now. Luckily, in the future we can follow our footprints.'"
+	say "Montana looks back to the maze and shakes her head, 'I'm glad it's over now. Luckily, in the future we can follow our footprints.'";
+	now footprints_1 is in Underground Passage_1;
+	now footprints_2 is in Underground Passage_5.
 
 Section - Characters
 
