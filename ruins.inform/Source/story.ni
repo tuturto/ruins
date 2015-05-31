@@ -65,7 +65,9 @@ Test scale-waterfall with "test travel-waterfall / tie rope to tree / down / exa
 
 Test light-braziers with "test scale-waterfall / east / examine floor / ask Montana about trap / jump / switch on lantern / read journal / light braziers"
 
-Test me with "test light-braziers"
+Test underground-passage with "test light-braziers / down / down / east / southwest / south / west / southeast / east"
+
+Test me with "test underground-passage"
 
 
 
@@ -419,6 +421,10 @@ understand "taxi" as car.
 
 Jungle Road is a room. The description is "This is end of the road and closest to the suspected location of the temple that you can get with car. The jungle surrounds you, forming an impenetrable looking wall." The journal entry is "A hidden path leads through green forest and takes the weary traveler to stream of kings." 
 
+Every turn when the player is in the Jungle Road and Montana is in the Jungle Road:
+	if a random chance of 1 in 3 succeeds:
+		say "Montana [one of]adjusts her gear[or]checks condition of the jeep[or]whistles a short merry tune[at random]."
+
 Path is scenery in Jungle Road. The description is "Despite for searching for a while, you can't find anything that would resemble a path."
 
 Instead of quizzing Montana about the Path:
@@ -447,6 +453,10 @@ Instead of cutting vines:
 		say "you lack proper tools."
 
 Jungle Path is northeast of Jungle Road. The description is "A small path leads through the jungle."
+
+Every turn when the player is in the Jungle Path and Montana is in the Jungle Path:
+	if a random chance of 1 in 3 succeeds:
+		say "Montana [one of]examines ground, trying to find some tracks[or]looks at the impenetrable jungle[or]rests in a shadow[at random]."
 
 Bend in Path is north of Jungle Path. The description is "The path starts to curve towards east."
 
